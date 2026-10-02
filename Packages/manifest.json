@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.ziba.growth": "file:../../../ziba-paywall-sdk/Packages/com.ziba.growth",
+    "com.ziba.growth": "ssh://git@git.wellytech.vn/welly-global/mobile-games/ziba-game-platform/ziba-paywall-sdk.git?path=/Packages/com.ziba.growth#v0.2.1",
     "com.unity.purchasing": "5.4.3",
     "com.unity.nuget.newtonsoft-json": "3.2.1",
     "com.unity.test-framework": "1.7.0",
