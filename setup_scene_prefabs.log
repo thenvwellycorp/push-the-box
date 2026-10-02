@@ -1,0 +1,415 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/staging' branch; Version is '6000.3.24f1 (4e7b9b5b6244) revision 5143451'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26300) Professional' Language: 'en' Physical Memory: 24341 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-WINDOWS" at "2026-10-02T05:06:50.2884442Z"
+System  architecture: x64
+Process architecture: x64
+Date: 2026-10-02T05:06:50Z
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 16356, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              8918349d36b6478197c68ec1ee44e7ec
+  Correlation Id:          6de55cee78aa6e31727bda6a760655ea
+  External correlation Id: 2081176926051705191
+  Machine Id:              hfCP91SaXawvx3V2+ZchTsguZsk=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-WINDOWS" (connect: 0.00s, validation: 0.00s, handshake: 0.07s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-WINDOWS-notifications" at "2026-10-02T05:06:50.3574977Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 18968493067679-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 0.07s
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.3.24f1\Editor\Unity.exe
+-batchmode
+-projectPath
+e:\game\Push the Box
+-executeMethod
+PushTheBox.EditorTools.SceneSetupHelper.SetupScene
+-quit
+-logFile
+e:\game\Push the Box\setup_scene_prefabs.log
+Successfully changed project path to: e:\game\Push the Box
+E:/game/Push the Box
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-remapper-allocator-initial-capacity=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [30172]  Target information:
+
+Player connection [30172]  * "[IP] 192.168.1.21 [Port] 55504 [Flags] 2 [Guid] 2094393670 [EditorId] 2094393670 [Version] 1048832 [Id] WindowsEditor(7,TheNV) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [30172] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [30172] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-37612" after 0.2 seconds.
+[Licensing::Client] Successfully resolved entitlement details
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Artifact Garbage Collection - Removed 7 unused hashed content files
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.24f1 (4e7b9b5b6244)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.24f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path E:/game/Push the Box/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+d3d12: failed to query info queue interface (0x80004002).
+Direct3D:
+    Version:         Direct3D 12 [level 12.1]
+    Renderer:        Intel(R) UHD Graphics 750 (ID=0x4c8a)
+    Vendor:          Intel
+    VRAM:            12170 MB
+    App VRAM Budget: 11402 MB
+    Driver:          31.0.101.5334
+    Unified Memory Architecture
+    Cache Coherent UMA
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.24f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.24f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.24f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56612
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.24f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.24f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.003727 seconds.
+- Loaded All Assemblies, in  0.370 seconds
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:False
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.377 seconds
+Domain Reload Profiling: 745ms
+	BeginReloadAssembly (129ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (16ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (43ms)
+	LoadAllAssembliesAndSetupDomain (153ms)
+		LoadAssemblies (111ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (150ms)
+			TypeCache.Refresh (149ms)
+				TypeCache.ScanAssembly (137ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (377ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (339ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (52ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (76ms)
+			ProcessInitializeOnLoadAttributes (123ms)
+			ProcessInitializeOnLoadMethodAttributes (83ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 39 packages:
+  Built-in packages:
+    com.unity.ugui@2.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.ugui@b996e7548785)
+    com.unity.2d.sprite@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.2d.sprite@5b922524bd83)
+    com.unity.multiplayer.center@1.0.1 (location: E:\game\Push the Box\Library\PackageCache\com.unity.multiplayer.center@f01f4ba8d00a)
+    com.unity.modules.accessibility@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.accessibility)
+    com.unity.modules.adaptiveperformance@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.adaptiveperformance)
+    com.unity.modules.ai@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.physics2d)
+    com.unity.modules.screencapture@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.terrainphysics)
+    com.unity.modules.tilemap@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.tilemap)
+    com.unity.modules.ui@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vectorgraphics@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.vectorgraphics)
+    com.unity.modules.vehicles@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.video)
+    com.unity.modules.vr@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.vr)
+    com.unity.modules.wind@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: E:\game\Push the Box\Library\PackageCache\com.unity.modules.hierarchycore)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.01 seconds
+[ScriptCompilation] Requested script compilation because: Assetdatabase observed changes in script compilation related files
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.24f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: E:/game/Push the Box
+DisplayProgressbar: Compiling Scripts
+ExitCode: 0 Duration: 1s134ms
+[236/239    1s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
+[237/239    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb
+[238/239    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+*** Tundra build success (1.10 seconds), 3 items updated, 239 evaluated
+AssetDatabase: script compilation time: 1.482891s
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.495 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.410 seconds
+Domain Reload Profiling: 904ms
+	BeginReloadAssembly (342ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (79ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (137ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (17ms)
+	LoadAllAssembliesAndSetupDomain (93ms)
+		LoadAssemblies (153ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (26ms)
+			TypeCache.Refresh (18ms)
+				TypeCache.ScanAssembly (12ms)
+			BuildScriptInfoCaches (4ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (410ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (281ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (31ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (106ms)
+			ProcessInitializeOnLoadAttributes (102ms)
+			ProcessInitializeOnLoadMethodAttributes (35ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (22ms)
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=945f2324411667e469f37303c6e72677): Total: 2.570 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=512 ms
+		Asset DB Callback time: managed=55 ms, native=13 ms
+		Scripting: domain reloads=1, domain reload time=495 ms, compile time=1485 ms, other=7 ms
+		Project Asset Count: scripts=236, non-scripts=186
+		Asset File Changes: new=0, changed=1, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.002ms
+	InvokePackagesCallback: 12.537ms
+	ApplyChangesToAssetFolders: 0.570ms
+	Scan: 23.354ms
+	OnSourceAssetsModified: 1.060ms
+	CategorizeAssetsWithTransientArtifact: 1.577ms
+	ProcessAssetsWithTransientArtifactChanges: 6.478ms
+	CategorizeAssets: 5.056ms
+	ImportOutOfDateAssets: 411.327ms (-1073.696ms without children)
+		CompileScripts: 1484.604ms
+		ReloadNativeAssets: 0.001ms
+		UnloadImportedAssets: 0.092ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.057ms
+		InitializingProgressBar: 0.001ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.267ms
+	PostProcessAllAssets: 55.798ms
+	Hotreload: 1.863ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.002ms
+	UnloadStreamsBegin: 1.551ms
+	PersistCurrentRevisions: 0.013ms
+	UnloadStreamsEnd: 0.001ms
+	GenerateScriptTypeHashes: 2.411ms
+	Untracked: 2048.964ms
+
+Application.AssetDatabase Initial Refresh End
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Scanning for USB devices : 3.230ms
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-Push the Box
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 515 unused Assets / (0.6 MB). Loaded Objects now: 1144.
+Memory consumption went from 95.3 MB to 94.8 MB.
+Total: 5.951500 ms (FindLiveObjects: 0.088300 ms CreateObjectMapping: 0.023300 ms MarkObjects: 5.400600 ms  DeleteObjects: 0.438000 ms)
+
+Asset Pipeline Refresh (id=522fe985b09a3e64787a79bd125b7018): Total: 0.044 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Player.png using Guid(f2ef587829fd3b64997c9884ae1cc1b6) (TextureImporter) -> (artifact id: '0c88198ad5bc1c96e8c7c1ac5be47a86') in 0.0189891 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=88f60280b80fb224988b69a8c6a3f974): Total: 0.030 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Box.png using Guid(fb61fe73e28261e4ba56f0ddf989d35b) (TextureImporter) -> (artifact id: '89d698eaef582c21498191f92adf605e') in 0.0041969 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=4314cf0018cf82d48b393b556bb78816): Total: 0.010 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/BoxOnTarget.png using Guid(555e6d4e277f5ba49baf80efbef4da42) (TextureImporter) -> (artifact id: 'f8a2fbc7cb1d67abb671eabe0f42f954') in 0.0030994 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=7722d40086cf22349bdaffc07395c23f): Total: 0.010 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Target.png using Guid(9f6fcc57dd5a8474ba79a17c9b346e6a) (TextureImporter) -> (artifact id: '47f3afcd1749594048be1bc0af955b24') in 0.0039613 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=adaf290f3b9b4454cbb64433d62ac343): Total: 0.011 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Wall.png using Guid(10afdce4e54e18c4296cee7bda03d200) (TextureImporter) -> (artifact id: '47ef5c85412821043d240e52621f358e') in 0.0024731 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=959eac13a05aa4a43993d9fc2e5a68d2): Total: 0.007 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Floor.png using Guid(4a6c590fa2b713f4f9378cf4b3e0a73b) (TextureImporter) -> (artifact id: 'c234f89222ba6d97acfa14a77a81c1da') in 0.0026493 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=1a0ed7aa6a450a1439aa225afe83d86d): Total: 0.008 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Art/Star.png using Guid(31438e2df16a62e4c9b4cf4b8452a39d) (TextureImporter) -> (artifact id: '551dc4ace0edc453406ad58b24c5f582') in 0.0029511 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=e5831abd029053f4da302b60ffdfca60): Total: 0.008 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/ScriptableObjects/Levels/Level_3.asset using Guid(d3148128db49e454292c112648d3a26c) (NativeFormatImporter) -> (artifact id: '69fe4c1c71b843e3370f3aafba715106') in 0.0012107 seconds
+Start importing Assets/ScriptableObjects/Levels/Level_5.asset using Guid(2a051051f1edd7f429a3ddc4aea4d942) (NativeFormatImporter) -> (artifact id: '78455a2f68a3c41e69bd6cb8ae0cd923') in 0.0009199 seconds
+Start importing Assets/ScriptableObjects/Levels/Level_4.asset using Guid(fad082206075b5542a181502cfe28602) (NativeFormatImporter) -> (artifact id: 'fb5689a56dbbe8ce2cf82df77ec0dd2d') in 0.0013859 seconds
+Start importing Assets/ScriptableObjects/Levels/Level_1.asset using Guid(8b7593515e0fcd542bd21a03aa59f620) (NativeFormatImporter) -> (artifact id: 'a3461b05c4cac0638e0bb9947fa70bd9') in 0.0011886 seconds
+Start importing Assets/ScriptableObjects/Levels/Level_2.asset using Guid(8f4bd99150dc23847b995535eee20d93) (NativeFormatImporter) -> (artifact id: '8a0ac8fa2ad198f25a3ee4d148a01a4d') in 0.0009854 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=9fd8e01eba8f98b41a95d09822d5b142): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=0a0d6ac26fa095b47a21d6845574d4a0): Total: 0.009 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+[AssetGenerator] Successfully generated all sprites and level data!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+PushTheBox.EditorTools.AssetGenerator:GenerateAll () (at Assets/Scripts/Editor/AssetGenerator.cs:17)
+PushTheBox.EditorTools.SceneSetupHelper:SetupScene () (at Assets/Scripts/Editor/SceneSetupHelper.cs:23)
+
+(Filename: Assets/Scripts/Editor/AssetGenerator.cs Line: 17)
+
+Start importing Assets/Prefabs/Player.prefab using Guid(b16f928a920291c4c87562e73828cf7f) (PrefabImporter) -> (artifact id: '5d49a76e203b85153b4e0275491be42b') in 0.0106226 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=a8a632e4afd1bbd4c8066831db9a6d25): Total: 0.024 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Box.prefab using Guid(7c73a514e5f8d174884c4e966b2064b7) (PrefabImporter) -> (artifact id: 'e7aa2e85db341a4f1ab5e188fac19c64') in 0.0120064 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=3da3a4bbdfba2b94895cd3a090785c0f): Total: 0.024 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Target.prefab using Guid(6e83a703f94f74d4f91957180dbb3887) (PrefabImporter) -> (artifact id: 'c69d475ec3fc32ef066960bcb2491544') in 0.0105815 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c80ba38973850f84fad6318432be9f36): Total: 0.023 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Wall.prefab using Guid(1a474a971de2db44c86111f268989554) (PrefabImporter) -> (artifact id: '7f80b6f678abbf83de57160e4aab93b4') in 0.0106224 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=cfe401cdc842934448db1c225ed27db6): Total: 0.023 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/Prefabs/Floor.prefab using Guid(d39fd4ec0a6122444819bf3f7eb8d9ad) (PrefabImporter) -> (artifact id: 'caaec12dd6ba28e88f7a4131b2ccbcb7') in 0.0125575 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=d8cb82fee29cbce4ab12b497764941c6): Total: 0.024 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=ed1fae522caf1f8488494124dc5d306c): Total: 0.024 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 51 unused Assets / (18.9 KB). Loaded Objects now: 1146.
+Memory consumption went from 93.8 MB to 93.7 MB.
+Total: 3.779600 ms (FindLiveObjects: 0.053600 ms CreateObjectMapping: 0.014800 ms MarkObjects: 3.623800 ms  DeleteObjects: 0.086500 ms)
+
+Start importing Assets/Scenes/Game.unity using Guid(2674d21abcdda4c47842fb9e600491b6) (DefaultImporter) -> (artifact id: '05acd085833ea6641663f2b9ae48771e') in 0.0008168 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=6c61c0dd4d962c842a5ed865b18fafa0): Total: 0.013 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[SceneSetupHelper] Game scene successfully created and configured at 'Assets/Scenes/Game.unity'!
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+PushTheBox.EditorTools.SceneSetupHelper:SetupScene () (at Assets/Scripts/Editor/SceneSetupHelper.cs:466)
+
+(Filename: Assets/Scripts/Editor/SceneSetupHelper.cs Line: 466)
+
+Batchmode quit successfully invoked - shutting down!
+Killing ADB server in 0.0455439 seconds.
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-WINDOWS-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-WINDOWS channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+Exiting batchmode successfully now!
+Exiting without the bug reporter. Application will terminate with return code 0

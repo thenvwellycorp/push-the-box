@@ -1,0 +1,42 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/staging' branch; Version is '6000.3.24f1 (4e7b9b5b6244) revision 5143451'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26300) Professional' Language: 'en' Physical Memory: 24341 MB
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-WINDOWS" at "2026-10-02T06:38:02.6772076Z"
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-10-02T06:38:02Z
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 16356, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              56d4038a858f45ce91792d2e2e653d40
+  Correlation Id:          6de55cee78aa6e31727bda6a760655ea
+  External correlation Id: 6495158293808785653
+  Machine Id:              hfCP91SaXawvx3V2+ZchTsguZsk=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-WINDOWS" (connect: 0.00s, validation: 0.00s, handshake: 0.05s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-WINDOWS-notifications" at "2026-10-02T06:38:02.7284995Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 18968493067679-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 0.06s
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.3.24f1\Editor\Unity.exe
+-batchmode
+-projectPath
+e:\game\Push the Box
+-executeMethod
+PushTheBox.EditorTools.SceneSetupHelper.SetupScene
+-quit
+-logFile
+e:\game\Push the Box\setup_ui_fix.log
+Successfully changed project path to: e:\game\Push the Box
+E:/game/Push the Box
+Exiting without the bug reporter. Application will terminate with return code 1

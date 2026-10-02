@@ -1,0 +1,12 @@
+# ninja log v5
+118	1370	8126245819987226	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	18f485a941798baf
+1409	3430	8126245839299833	E:/game/Push the Box/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/76a573jj/obj/arm64-v8a/libswappywrapper.so	1e7a034b76c2643c
+45	5595	8126245862419855	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	83312904ad40042c
+78	5605	8126245862952490	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	ff0ea47b2cd279bb
+2	5935	8126245865917161	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	22170e4c4cc349db
+20	5981	8126245867019011	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	598296741036c8bf
+92	6067	8126245867913027	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	1c5973483bff3bff
+106	6600	8126245873233336	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	71d14ea8df555c72
+57	6664	8126245873905510	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	a7cc3c9167b1191
+35	6993	8126245877153466	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	74b0a7f279178d2e
+6993	7178	8126245879041797	E:/game/Push the Box/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/76a573jj/obj/arm64-v8a/libgame.so	61502cc1c5e01e8b
