@@ -16,6 +16,7 @@ namespace PushTheBox.UI
         [SerializeField] private GameObject levelSelectView;
         [SerializeField] private GameObject gameView;
         [SerializeField] private GameObject levelCompleteModal;
+        [SerializeField] private GameObject gameOverModal;
 
         private void Awake()
         {
@@ -27,6 +28,33 @@ namespace PushTheBox.UI
             {
                 Destroy(gameObject);
                 return;
+            }
+
+            if (levelCompleteModal == null)
+            {
+                var completeUI = Object.FindFirstObjectByType<LevelCompleteUI>(FindObjectsInactive.Include);
+                if (completeUI != null)
+                {
+                    levelCompleteModal = completeUI.gameObject;
+                }
+            }
+
+            if (gameOverModal == null)
+            {
+                var goUI = Object.FindFirstObjectByType<GameOverUI>(FindObjectsInactive.Include);
+                if (goUI != null)
+                {
+                    gameOverModal = goUI.gameObject;
+                }
+                else
+                {
+                    GameObject goObj = new GameObject("GameOver_Modal", typeof(RectTransform));
+                    goObj.transform.SetParent(transform, false);
+                    var ui = goObj.AddComponent<GameOverUI>();
+                    ui.EnsureUI();
+                    gameOverModal = goObj;
+                    gameOverModal.SetActive(false);
+                }
             }
         }
 
@@ -52,12 +80,16 @@ namespace PushTheBox.UI
         {
             if (mainMenuView != null) mainMenuView.SetActive(newState == GameState.MainMenu);
             if (levelSelectView != null) levelSelectView.SetActive(newState == GameState.LevelSelect);
-            if (gameView != null) gameView.SetActive(newState == GameState.Playing || newState == GameState.LevelCompleted || newState == GameState.Paused);
+            if (gameView != null) gameView.SetActive(newState == GameState.Playing || newState == GameState.LevelCompleted || newState == GameState.Paused || newState == GameState.GameOver);
 
-            // Modal is handled directly by LevelCompleteUI, but hide if leaving completed state
-            if (newState != GameState.LevelCompleted && levelCompleteModal != null)
+            if (levelCompleteModal != null)
             {
-                levelCompleteModal.SetActive(false);
+                levelCompleteModal.SetActive(newState == GameState.LevelCompleted);
+            }
+
+            if (gameOverModal != null)
+            {
+                gameOverModal.SetActive(newState == GameState.GameOver);
             }
         }
     }

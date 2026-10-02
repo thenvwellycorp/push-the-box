@@ -12,7 +12,9 @@ namespace PushTheBox.Audio
         Undo,
         ButtonClick,
         LevelComplete,
-        DeadlockWarning
+        DeadlockWarning,
+        CoinReward,
+        GameOver
     }
 
     /// <summary>
@@ -31,6 +33,8 @@ namespace PushTheBox.Audio
         [SerializeField] private AudioClip buttonClip;
         [SerializeField] private AudioClip winClip;
         [SerializeField] private AudioClip warningClip;
+        [SerializeField] private AudioClip coinClip;
+        [SerializeField] private AudioClip gameOverClip;
 
         private AudioSource sfxSource;
         private bool isMuted = false;
@@ -94,6 +98,8 @@ namespace PushTheBox.Audio
                 case SoundType.ButtonClick: return buttonClip;
                 case SoundType.LevelComplete: return winClip;
                 case SoundType.DeadlockWarning: return warningClip;
+                case SoundType.CoinReward: return coinClip;
+                case SoundType.GameOver: return gameOverClip != null ? gameOverClip : warningClip;
                 default: return null;
             }
         }
@@ -124,6 +130,12 @@ namespace PushTheBox.Audio
 
             if (warningClip == null)
                 warningClip = SynthesizeTone("SFX_Warning", 220f, 0.18f, 0.35f, WaveType.Sawtooth);
+
+            if (coinClip == null)
+                coinClip = SynthesizeChime("SFX_Coin", new float[] { 987.77f, 1318.51f }, 0.28f);
+
+            if (gameOverClip == null)
+                gameOverClip = SynthesizeTone("SFX_GameOver", 140f, 0.4f, 0.4f, WaveType.Sawtooth, true);
         }
 
         private enum WaveType { Sine, Square, Sawtooth }

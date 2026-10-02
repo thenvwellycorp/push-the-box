@@ -17,18 +17,64 @@ namespace PushTheBox.UI
         [SerializeField] private Transform buttonsContainer;
         [SerializeField] private LevelButtonUI levelButtonPrefab;
         [SerializeField] private Button backButton;
+        [SerializeField] private Text coinsText;
 
         private readonly List<LevelButtonUI> spawnedButtons = new List<LevelButtonUI>();
+
+        private void Awake()
+        {
+            EnsureCoinUI();
+        }
+
+        private void EnsureCoinUI()
+        {
+            if (coinsText != null) return;
+            Text anyText = GetComponentInChildren<Text>();
+            Font f = anyText != null ? anyText.font : null;
+            coinsText = CoinUIHelper.CreateBadge(transform, f, new Vector2(0.68f, 0.86f), new Vector2(0.94f, 0.92f), "LevelSelectCoinBadge");
+            if (coinsText != null)
+            {
+                Button badgeBtn = coinsText.transform.parent.gameObject.GetComponent<Button>();
+                if (badgeBtn == null) badgeBtn = coinsText.transform.parent.gameObject.AddComponent<Button>();
+                badgeBtn.onClick.AddListener(() =>
+                {
+                    if (PushTheBox.GrowthIntegration.GrowthManager.Instance != null)
+                    {
+                        _ = PushTheBox.GrowthIntegration.GrowthManager.Instance.OpenShopAsync();
+                    }
+                });
+            }
+        }
 
         private void OnEnable()
         {
             if (backButton != null) backButton.onClick.AddListener(OnBackClicked);
+
+            if (SaveManager.Instance != null)
+            {
+                SaveManager.Instance.OnCoinsChanged += UpdateCoinsUI;
+                UpdateCoinsUI(SaveManager.Instance.Coins);
+            }
+
             PopulateLevels();
         }
 
         private void OnDisable()
         {
             if (backButton != null) backButton.onClick.RemoveListener(OnBackClicked);
+
+            if (SaveManager.Instance != null)
+            {
+                SaveManager.Instance.OnCoinsChanged -= UpdateCoinsUI;
+            }
+        }
+
+        private void UpdateCoinsUI(int coins)
+        {
+            if (coinsText != null)
+            {
+                coinsText.text = coins.ToString();
+            }
         }
 
         public void PopulateLevels()

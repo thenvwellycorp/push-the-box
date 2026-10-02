@@ -110,6 +110,7 @@ namespace PushTheBox.EditorTools
             // 3. Setup UI Hierarchy
             Font defaultFont = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
             if (defaultFont == null) defaultFont = Resources.GetBuiltinResource<Font>("Arial.ttf");
+            Sprite coinSprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Art/Coin.png");
 
             GameObject canvasObj = new GameObject("Canvas");
             Canvas canvas = canvasObj.AddComponent<Canvas>();
@@ -172,12 +173,16 @@ namespace PushTheBox.EditorTools
             Button levelsBtn = CreateStyledButton("LevelsButton", menuBtns.transform, "LEVELS", defaultFont, new Color(0.25f, 0.52f, 0.9f, 1f), 120f);
             Button soundBtn = CreateStyledButton("SoundButton", menuBtns.transform, "SOUND: ON", defaultFont, new Color(0.32f, 0.38f, 0.48f, 1f), 120f);
 
+            // Coin Badge on Main Menu
+            Text menuCoinTxt = CreateCoinBadge("MainMenuCoinBadge", mainMenu.transform, defaultFont, new Vector2(0.68f, 0.92f), new Vector2(0.94f, 0.97f), coinSprite);
+
             // Wire menu serialized fields via SerializedObject
             SerializedObject soMenu = new SerializedObject(menuUI);
             soMenu.FindProperty("playButton").objectReferenceValue = playBtn;
             soMenu.FindProperty("levelSelectButton").objectReferenceValue = levelsBtn;
             soMenu.FindProperty("soundToggleButton").objectReferenceValue = soundBtn;
             soMenu.FindProperty("soundToggleText").objectReferenceValue = soundBtn.GetComponentInChildren<Text>();
+            soMenu.FindProperty("totalCoinsText").objectReferenceValue = menuCoinTxt;
             soMenu.ApplyModifiedProperties();
 
             // ================== B. LEVEL SELECT VIEW ==================
@@ -218,10 +223,13 @@ namespace PushTheBox.EditorTools
             backRt.offsetMin = Vector2.zero;
             backRt.offsetMax = Vector2.zero;
 
+            Text lsCoinTxt = CreateCoinBadge("LevelSelectCoinBadge", levelSelect.transform, defaultFont, new Vector2(0.68f, 0.86f), new Vector2(0.94f, 0.92f), coinSprite);
+
             LevelButtonUI lbPrefab = AssetDatabase.LoadAssetAtPath<LevelButtonUI>("Assets/Prefabs/LevelButton.prefab");
             SerializedObject soLs = new SerializedObject(levelSelectUI);
             soLs.FindProperty("buttonsContainer").objectReferenceValue = gridContainer.transform;
             soLs.FindProperty("backButton").objectReferenceValue = backBtn;
+            soLs.FindProperty("coinsText").objectReferenceValue = lsCoinTxt;
             if (lbPrefab != null) soLs.FindProperty("levelButtonPrefab").objectReferenceValue = lbPrefab;
             soLs.ApplyModifiedProperties();
 
@@ -275,9 +283,11 @@ namespace PushTheBox.EditorTools
             starGoalTxt.alignment = TextAnchor.MiddleLeft;
             RectTransform starGoalRt = starGoalObj.GetComponent<RectTransform>();
             starGoalRt.anchorMin = new Vector2(0f, 0f);
-            starGoalRt.anchorMax = new Vector2(0.7f, 0.45f);
+            starGoalRt.anchorMax = new Vector2(0.60f, 0.45f);
             starGoalRt.offsetMin = Vector2.zero;
             starGoalRt.offsetMax = Vector2.zero;
+
+            Text hudCoinTxt = CreateCoinBadge("HUDCoinBadge", topBar.transform, defaultFont, new Vector2(0.65f, 0f), new Vector2(1f, 0.45f), coinSprite);
 
             // Deadlock Banner
             GameObject deadlockBanner = CreateUIElement("DeadlockBanner", gameHUD.transform);
@@ -335,6 +345,7 @@ namespace PushTheBox.EditorTools
             soGame.FindProperty("levelTitleText").objectReferenceValue = lvlNameTxt;
             soGame.FindProperty("moveCountText").objectReferenceValue = movesTxt;
             soGame.FindProperty("targetMovesText").objectReferenceValue = starGoalTxt;
+            soGame.FindProperty("coinCountText").objectReferenceValue = hudCoinTxt;
             soGame.FindProperty("undoButton").objectReferenceValue = undoBtn;
             soGame.FindProperty("restartButton").objectReferenceValue = restartBtn;
             soGame.FindProperty("menuButton").objectReferenceValue = menuHUDButton;
@@ -358,8 +369,8 @@ namespace PushTheBox.EditorTools
             Image cardBg = cardPanel.AddComponent<Image>();
             cardBg.color = new Color(0.14f, 0.18f, 0.25f, 1f);
             RectTransform cardRt = cardPanel.GetComponent<RectTransform>();
-            cardRt.anchorMin = new Vector2(0.1f, 0.30f);
-            cardRt.anchorMax = new Vector2(0.9f, 0.70f);
+            cardRt.anchorMin = new Vector2(0.1f, 0.24f);
+            cardRt.anchorMax = new Vector2(0.9f, 0.76f);
             cardRt.offsetMin = Vector2.zero;
             cardRt.offsetMax = Vector2.zero;
 
@@ -372,16 +383,16 @@ namespace PushTheBox.EditorTools
             winTitleTxt.alignment = TextAnchor.MiddleCenter;
             winTitleTxt.color = new Color(0.35f, 0.95f, 0.45f, 1f);
             RectTransform winTitleRt = winTitle.GetComponent<RectTransform>();
-            winTitleRt.anchorMin = new Vector2(0.05f, 0.80f);
-            winTitleRt.anchorMax = new Vector2(0.95f, 0.95f);
+            winTitleRt.anchorMin = new Vector2(0.05f, 0.83f);
+            winTitleRt.anchorMax = new Vector2(0.95f, 0.96f);
             winTitleRt.offsetMin = Vector2.zero;
             winTitleRt.offsetMax = Vector2.zero;
 
             // Stars Row
             GameObject starsRow = CreateUIElement("StarsRow", cardPanel.transform);
             RectTransform starsRowRt = starsRow.GetComponent<RectTransform>();
-            starsRowRt.anchorMin = new Vector2(0.15f, 0.55f);
-            starsRowRt.anchorMax = new Vector2(0.85f, 0.75f);
+            starsRowRt.anchorMin = new Vector2(0.15f, 0.65f);
+            starsRowRt.anchorMax = new Vector2(0.85f, 0.81f);
             starsRowRt.offsetMin = Vector2.zero;
             starsRowRt.offsetMax = Vector2.zero;
             HorizontalLayoutGroup starsHlg = starsRow.AddComponent<HorizontalLayoutGroup>();
@@ -403,44 +414,115 @@ namespace PushTheBox.EditorTools
                 starImgs[s] = sImg;
             }
 
+            // Coin Reward Row
+            GameObject coinRewardRow = CreateUIElement("CoinRewardRow", cardPanel.transform);
+            RectTransform crRt = coinRewardRow.GetComponent<RectTransform>();
+            crRt.anchorMin = new Vector2(0.15f, 0.47f);
+            crRt.anchorMax = new Vector2(0.85f, 0.62f);
+            crRt.offsetMin = Vector2.zero;
+            crRt.offsetMax = Vector2.zero;
+
+            Image crBg = coinRewardRow.AddComponent<Image>();
+            crBg.color = new Color(0.2f, 0.25f, 0.35f, 0.6f);
+            Sprite btnSprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Art/ButtonBg.png");
+            if (btnSprite != null)
+            {
+                crBg.sprite = btnSprite;
+                crBg.type = Image.Type.Sliced;
+            }
+
+            HorizontalLayoutGroup crHlg = coinRewardRow.AddComponent<HorizontalLayoutGroup>();
+            crHlg.spacing = 15f;
+            crHlg.childAlignment = TextAnchor.MiddleCenter;
+            crHlg.childControlWidth = false;
+            crHlg.childControlHeight = false;
+
+            GameObject cIconObj = CreateUIElement("RewardCoinIcon", coinRewardRow.transform);
+            RectTransform cIconRt = cIconObj.GetComponent<RectTransform>();
+            cIconRt.sizeDelta = new Vector2(56, 56);
+            Image cIconImg = cIconObj.AddComponent<Image>();
+            if (coinSprite != null) cIconImg.sprite = coinSprite;
+
+            GameObject cEarnedObj = CreateUIElement("CoinsEarnedText", coinRewardRow.transform);
+            RectTransform cEarnedRt = cEarnedObj.GetComponent<RectTransform>();
+            cEarnedRt.sizeDelta = new Vector2(160, 56);
+            Text cEarnedTxt = cEarnedObj.AddComponent<Text>();
+            cEarnedTxt.text = "+50";
+            cEarnedTxt.font = defaultFont;
+            cEarnedTxt.fontSize = 42;
+            cEarnedTxt.fontStyle = FontStyle.Bold;
+            cEarnedTxt.color = new Color(1f, 0.85f, 0.2f, 1f);
+            cEarnedTxt.alignment = TextAnchor.MiddleLeft;
+
+            GameObject cTotalObj = CreateUIElement("TotalCoinsText", coinRewardRow.transform);
+            RectTransform cTotalRt = cTotalObj.GetComponent<RectTransform>();
+            cTotalRt.sizeDelta = new Vector2(160, 56);
+            Text cTotalTxt = cTotalObj.AddComponent<Text>();
+            cTotalTxt.text = "Coins";
+            cTotalTxt.font = defaultFont;
+            cTotalTxt.fontSize = 26;
+            cTotalTxt.color = new Color(0.8f, 0.85f, 0.95f, 0.8f);
+            cTotalTxt.alignment = TextAnchor.MiddleLeft;
+
             // Moves summary text
             GameObject winMovesObj = CreateUIElement("WinMovesText", cardPanel.transform);
             Text winMovesTxt = winMovesObj.AddComponent<Text>();
             winMovesTxt.text = "Total Moves: 0";
             winMovesTxt.font = defaultFont;
-            winMovesTxt.fontSize = 38;
+            winMovesTxt.fontSize = 32;
             winMovesTxt.alignment = TextAnchor.MiddleCenter;
-            winMovesTxt.color = Color.white;
+            winMovesTxt.color = new Color(0.85f, 0.9f, 1f, 0.85f);
             RectTransform winMovesRt = winMovesObj.GetComponent<RectTransform>();
-            winMovesRt.anchorMin = new Vector2(0.1f, 0.38f);
-            winMovesRt.anchorMax = new Vector2(0.9f, 0.50f);
+            winMovesRt.anchorMin = new Vector2(0.1f, 0.44f);
+            winMovesRt.anchorMax = new Vector2(0.9f, 0.51f);
             winMovesRt.offsetMin = Vector2.zero;
             winMovesRt.offsetMax = Vector2.zero;
 
-            // Card Action Buttons
-            GameObject winBtns = CreateUIElement("WinButtons", cardPanel.transform);
-            RectTransform winBtnsRt = winBtns.GetComponent<RectTransform>();
-            winBtnsRt.anchorMin = new Vector2(0.06f, 0.08f);
-            winBtnsRt.anchorMax = new Vector2(0.94f, 0.30f);
-            winBtnsRt.offsetMin = Vector2.zero;
-            winBtnsRt.offsetMax = Vector2.zero;
-            HorizontalLayoutGroup winHlg = winBtns.AddComponent<HorizontalLayoutGroup>();
-            winHlg.spacing = 16f;
-            winHlg.childControlWidth = true;
-            winHlg.childControlHeight = true;
-            winHlg.childForceExpandWidth = true;
-            winHlg.childForceExpandHeight = true;
-            winHlg.childAlignment = TextAnchor.MiddleCenter;
+            // ACTION BUTTON 1: CLAIM 2X COIN (Vibrant Gold-Orange, Top Priority)
+            Button doubleCoinsBtn = CreateStyledButton("DoubleCoinsButton", cardPanel.transform, "▶ CLAIM 2X (+50)", defaultFont, new Color(0.96f, 0.58f, 0.12f, 1f), 85f);
+            RectTransform dcRt = doubleCoinsBtn.GetComponent<RectTransform>();
+            dcRt.anchorMin = new Vector2(0.08f, 0.28f);
+            dcRt.anchorMax = new Vector2(0.92f, 0.41f);
+            dcRt.offsetMin = Vector2.zero;
+            dcRt.offsetMax = Vector2.zero;
 
-            Button replayBtn = CreateStyledButton("ReplayButton", winBtns.transform, "↻ Replay", defaultFont, new Color(0.35f, 0.4f, 0.5f, 1f), 85f);
-            Button nextBtn = CreateStyledButton("NextButton", winBtns.transform, "Next ▶", defaultFont, new Color(0.2f, 0.72f, 0.4f, 1f), 85f);
-            Button lsBtn = CreateStyledButton("LevelsButton", winBtns.transform, "Levels", defaultFont, new Color(0.25f, 0.45f, 0.75f, 1f), 85f);
+            // ACTION BUTTON 2: NEXT LEVEL (Vibrant Emerald Green)
+            Button nextBtn = CreateStyledButton("NextButton", cardPanel.transform, "NEXT LEVEL ▶", defaultFont, new Color(0.12f, 0.70f, 0.42f, 1f), 80f);
+            RectTransform nextRt = nextBtn.GetComponent<RectTransform>();
+            nextRt.anchorMin = new Vector2(0.08f, 0.15f);
+            nextRt.anchorMax = new Vector2(0.92f, 0.26f);
+            nextRt.offsetMin = Vector2.zero;
+            nextRt.offsetMax = Vector2.zero;
+
+            // Secondary Buttons Row (Replay & Level Select)
+            GameObject secBtns = CreateUIElement("SecondaryButtons", cardPanel.transform);
+            RectTransform secRt = secBtns.GetComponent<RectTransform>();
+            secRt.anchorMin = new Vector2(0.10f, 0.03f);
+            secRt.anchorMax = new Vector2(0.90f, 0.12f);
+            secRt.offsetMin = Vector2.zero;
+            secRt.offsetMax = Vector2.zero;
+            HorizontalLayoutGroup secHlg = secBtns.AddComponent<HorizontalLayoutGroup>();
+            secHlg.spacing = 16f;
+            secHlg.childControlWidth = true;
+            secHlg.childControlHeight = true;
+            secHlg.childForceExpandWidth = true;
+            secHlg.childForceExpandHeight = true;
+            secHlg.childAlignment = TextAnchor.MiddleCenter;
+
+            Button replayBtn = CreateStyledButton("ReplayButton", secBtns.transform, "↻ Replay", defaultFont, new Color(0.30f, 0.36f, 0.46f, 1f), 60f);
+            Button lsBtn = CreateStyledButton("LevelsButton", secBtns.transform, "☰ Levels", defaultFont, new Color(0.24f, 0.32f, 0.44f, 1f), 60f);
 
             SerializedObject soWin = new SerializedObject(completeUI);
             soWin.FindProperty("modalRoot").objectReferenceValue = completeModal;
             soWin.FindProperty("dialogContent").objectReferenceValue = cardPanel.transform;
             soWin.FindProperty("titleText").objectReferenceValue = winTitleTxt;
             soWin.FindProperty("movesText").objectReferenceValue = winMovesTxt;
+            soWin.FindProperty("coinContainer").objectReferenceValue = coinRewardRow;
+            soWin.FindProperty("coinsEarnedText").objectReferenceValue = cEarnedTxt;
+            soWin.FindProperty("totalCoinsText").objectReferenceValue = cTotalTxt;
+            soWin.FindProperty("coinAnimTransform").objectReferenceValue = coinRewardRow.transform;
+            soWin.FindProperty("doubleCoinsButton").objectReferenceValue = doubleCoinsBtn;
+            soWin.FindProperty("doubleCoinsButtonText").objectReferenceValue = doubleCoinsBtn.GetComponentInChildren<Text>();
             soWin.FindProperty("replayButton").objectReferenceValue = replayBtn;
             soWin.FindProperty("nextLevelButton").objectReferenceValue = nextBtn;
             soWin.FindProperty("levelSelectButton").objectReferenceValue = lsBtn;
@@ -454,12 +536,20 @@ namespace PushTheBox.EditorTools
             soWin.ApplyModifiedProperties();
             completeModal.SetActive(false);
 
+            // ================== E. GAME OVER MODAL ==================
+            GameObject gameOverModal = CreateUIElement("GameOver_Modal", canvasObj.transform);
+            SetStretch(gameOverModal);
+            GameOverUI goUI = gameOverModal.AddComponent<GameOverUI>();
+            goUI.EnsureUI();
+            gameOverModal.SetActive(false);
+
             // Wire UIManager
             SerializedObject soUiMgr = new SerializedObject(uiManager);
             soUiMgr.FindProperty("mainMenuView").objectReferenceValue = mainMenu;
             soUiMgr.FindProperty("levelSelectView").objectReferenceValue = levelSelect;
             soUiMgr.FindProperty("gameView").objectReferenceValue = gameHUD;
             soUiMgr.FindProperty("levelCompleteModal").objectReferenceValue = completeModal;
+            soUiMgr.FindProperty("gameOverModal").objectReferenceValue = gameOverModal;
             soUiMgr.ApplyModifiedProperties();
 
             // Set Initial view visibility
@@ -496,6 +586,53 @@ namespace PushTheBox.EditorTools
             rt.anchorMax = Vector2.one;
             rt.offsetMin = Vector2.zero;
             rt.offsetMax = Vector2.zero;
+        }
+
+        private static Text CreateCoinBadge(string name, Transform parent, Font font, Vector2 anchorMin, Vector2 anchorMax, Sprite coinSprite)
+        {
+            GameObject badge = CreateUIElement(name, parent);
+            RectTransform rt = badge.GetComponent<RectTransform>();
+            rt.anchorMin = anchorMin;
+            rt.anchorMax = anchorMax;
+            rt.offsetMin = Vector2.zero;
+            rt.offsetMax = Vector2.zero;
+
+            Image bg = badge.AddComponent<Image>();
+            bg.color = new Color(0.12f, 0.16f, 0.24f, 0.9f);
+
+            Sprite btnSprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Art/ButtonBg.png");
+            if (btnSprite != null)
+            {
+                bg.sprite = btnSprite;
+                bg.type = Image.Type.Sliced;
+            }
+
+            // Coin Icon
+            GameObject iconObj = CreateUIElement("CoinIcon", badge.transform);
+            RectTransform iconRt = iconObj.GetComponent<RectTransform>();
+            iconRt.anchorMin = new Vector2(0.06f, 0.15f);
+            iconRt.anchorMax = new Vector2(0.36f, 0.85f);
+            iconRt.offsetMin = Vector2.zero;
+            iconRt.offsetMax = Vector2.zero;
+            Image iconImg = iconObj.AddComponent<Image>();
+            if (coinSprite != null) iconImg.sprite = coinSprite;
+
+            // Coin Text
+            GameObject txtObj = CreateUIElement("CoinText", badge.transform);
+            RectTransform txtRt = txtObj.GetComponent<RectTransform>();
+            txtRt.anchorMin = new Vector2(0.38f, 0.1f);
+            txtRt.anchorMax = new Vector2(0.94f, 0.9f);
+            txtRt.offsetMin = Vector2.zero;
+            txtRt.offsetMax = Vector2.zero;
+            Text txt = txtObj.AddComponent<Text>();
+            txt.text = "0";
+            txt.font = font;
+            txt.fontSize = 32;
+            txt.fontStyle = FontStyle.Bold;
+            txt.alignment = TextAnchor.MiddleLeft;
+            txt.color = new Color(1f, 0.85f, 0.2f, 1f);
+
+            return txt;
         }
 
         private static Button CreateStyledButton(string name, Transform parent, string label, Font font, Color bgColor, float prefHeight = 110f)

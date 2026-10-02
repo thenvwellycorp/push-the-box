@@ -1,0 +1,36 @@
+{
+  "project_info": {
+    "project_number": "833005694619",
+    "project_id": "admin-wellysport",
+    "storage_bucket": "admin-wellysport.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:833005694619:ios:a1603ba0483fe027f9603e",
+        "android_client_info": {
+          "package_name": "com.welly.paywall.platform"
+        }
+      },
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwC_gdyB2MEmxbvXlDyrJ9TimT80lxXSk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 0
+        },
+        "appinvite_service": {
+          "status": 1
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "833005694619-trumppvfcvqifopimkaempiddbmepv94.apps.googleusercontent.com"
+        }
+      ]
+    }
+  ],
+  "configuration_version": "1"
+}

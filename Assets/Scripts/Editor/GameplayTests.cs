@@ -16,6 +16,7 @@ namespace PushTheBox.EditorTools
             Debug.Log("================ STARTING VERIFICATION TESTS ================");
 
             TestSaveSystem();
+            TestLevelCoinCalculation();
             TestGridAndPushMechanics();
             TestUndoSystem();
             TestDeadlockDetection();
@@ -33,15 +34,43 @@ namespace PushTheBox.EditorTools
             sm.ResetAllProgress();
             Assert(sm.IsLevelUnlocked(1), "Level 1 must be unlocked by default.");
             Assert(!sm.IsLevelUnlocked(2), "Level 2 must be locked initially.");
+            Assert(sm.Coins == 0, "Coins must be 0 by default after reset.");
 
-            sm.SaveLevelResult(1, 3, 2);
+            // Test coin earning and spending
+            sm.AddCoins(50);
+            Assert(sm.Coins == 50, "Coins must be 50 after AddCoins(50).");
+
+            bool spent = sm.SpendCoins(30);
+            Assert(spent && sm.Coins == 20, "SpendCoins(30) should succeed and leave 20 coins.");
+
+            bool overspend = sm.SpendCoins(100);
+            Assert(!overspend && sm.Coins == 20, "Overspend should fail and leave coins untouched.");
+
+            // Test level result saving with coin reward
+            sm.SaveLevelResult(1, 3, 2, 80);
             Assert(sm.IsLevelUnlocked(2), "Level 2 must be unlocked after clearing Level 1.");
+            Assert(sm.Coins == 100, "Coins must be 100 (20 + 80) after SaveLevelResult with 80 coins.");
 
             var progress = sm.GetLevelProgress(1);
             Assert(progress != null && progress.stars == 3 && progress.bestMoves == 2, "Progress stars and best moves must be recorded.");
 
             Object.DestroyImmediate(go);
             Debug.Log("[TEST] SaveManager passed.");
+        }
+
+        private static void TestLevelCoinCalculation()
+        {
+            Debug.Log("[TEST] Testing Level Coin Calculation...");
+            LevelData ld = ScriptableObject.CreateInstance<LevelData>();
+            ld.baseCoinReward = 50;
+            ld.bonusCoinPerStar = 10;
+
+            Assert(ld.CalculateCoinReward(1) == 60, "1 star should award 60 coins (50 + 10).");
+            Assert(ld.CalculateCoinReward(2) == 70, "2 stars should award 70 coins (50 + 20).");
+            Assert(ld.CalculateCoinReward(3) == 80, "3 stars should award 80 coins (50 + 30).");
+
+            Object.DestroyImmediate(ld);
+            Debug.Log("[TEST] Level Coin Calculation passed.");
         }
 
         private static void TestGridAndPushMechanics()
@@ -149,8 +178,16 @@ namespace PushTheBox.EditorTools
             box.Initialize(1, new Vector2Int(1, 3), gm.GridToWorld(new Vector2Int(1, 3)));
             gm.RegisterBox(box);
 
+            bool cornerFired = false;
+            detector.OnCornerDeadlock += () => cornerFired = true;
+
             detector.CheckDeadlocks();
             Assert(detector.IsDeadlocked, "Box cornered between Up and Right walls must be marked deadlocked.");
+            Assert(cornerFired, "OnCornerDeadlock event must be fired when corner deadlock is detected.");
+
+            // Test reset
+            detector.ResetDeadlock();
+            Assert(!detector.IsDeadlocked, "Deadlock state must be cleared after ResetDeadlock.");
 
             // Cleanup
             Object.DestroyImmediate(boxGo);

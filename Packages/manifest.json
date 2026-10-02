@@ -1,5 +1,9 @@
 {
   "dependencies": {
+    "com.ziba.growth": "file:../../../ziba-paywall-sdk/Packages/com.ziba.growth",
+    "com.unity.purchasing": "5.4.3",
+    "com.unity.nuget.newtonsoft-json": "3.2.1",
+    "com.unity.test-framework": "1.7.0",
     "com.unity.ugui": "2.5.0",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.multiplayer.center": "1.0.1",

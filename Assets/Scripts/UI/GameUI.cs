@@ -5,6 +5,7 @@ using PushTheBox.Level;
 using PushTheBox.Audio;
 using PushTheBox.Gameplay;
 using PushTheBox.InputSystem;
+using PushTheBox.Save;
 
 namespace PushTheBox.UI
 {
@@ -18,6 +19,7 @@ namespace PushTheBox.UI
         [SerializeField] private Text levelTitleText;
         [SerializeField] private Text moveCountText;
         [SerializeField] private Text targetMovesText;
+        [SerializeField] private Text coinCountText;
 
         [Header("Control Buttons")]
         [SerializeField] private Button undoButton;
@@ -33,6 +35,24 @@ namespace PushTheBox.UI
         [Header("Deadlock Banner")]
         [SerializeField] private GameObject deadlockBanner;
         [SerializeField] private Text deadlockText;
+
+        private void Awake()
+        {
+            EnsureCoinUI();
+        }
+
+        private void EnsureCoinUI()
+        {
+            if (coinCountText != null) return;
+
+            Transform topBar = transform.Find("TopBar");
+            Transform parent = topBar != null ? topBar : transform;
+            Vector2 aMin = topBar != null ? new Vector2(0.65f, 0f) : new Vector2(0.70f, 0.90f);
+            Vector2 aMax = topBar != null ? new Vector2(1f, 0.45f) : new Vector2(0.95f, 0.96f);
+            Font font = levelTitleText != null ? levelTitleText.font : null;
+
+            coinCountText = CoinUIHelper.CreateBadge(parent, font, aMin, aMax, "HUDCoinBadge");
+        }
 
         private void OnEnable()
         {
@@ -51,6 +71,12 @@ namespace PushTheBox.UI
             if (DeadlockDetector.Instance != null)
             {
                 DeadlockDetector.Instance.OnDeadlockStatusChanged += HandleDeadlockStatusChanged;
+            }
+
+            if (SaveManager.Instance != null)
+            {
+                SaveManager.Instance.OnCoinsChanged += HandleCoinsChanged;
+                UpdateCoinsUI(SaveManager.Instance.Coins);
             }
 
             // Hook button listeners
@@ -85,9 +111,27 @@ namespace PushTheBox.UI
                 DeadlockDetector.Instance.OnDeadlockStatusChanged -= HandleDeadlockStatusChanged;
             }
 
+            if (SaveManager.Instance != null)
+            {
+                SaveManager.Instance.OnCoinsChanged -= HandleCoinsChanged;
+            }
+
             if (undoButton != null) undoButton.onClick.RemoveListener(OnUndoClicked);
             if (restartButton != null) restartButton.onClick.RemoveListener(OnRestartClicked);
             if (menuButton != null) menuButton.onClick.RemoveListener(OnMenuClicked);
+        }
+
+        private void HandleCoinsChanged(int totalCoins)
+        {
+            UpdateCoinsUI(totalCoins);
+        }
+
+        private void UpdateCoinsUI(int coins)
+        {
+            if (coinCountText != null)
+            {
+                coinCountText.text = coins.ToString();
+            }
         }
 
         private void HandleLevelLoaded(LevelData data)
@@ -103,6 +147,10 @@ namespace PushTheBox.UI
             }
 
             HandleMoveCountChanged(0);
+            if (SaveManager.Instance != null)
+            {
+                UpdateCoinsUI(SaveManager.Instance.Coins);
+            }
             if (deadlockBanner != null) deadlockBanner.SetActive(false);
         }
 

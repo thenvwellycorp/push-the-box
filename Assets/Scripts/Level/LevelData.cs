@@ -29,6 +29,12 @@ namespace PushTheBox.Level
         [Tooltip("Moves <= this amount awards 2 stars")]
         public int twoStarMoves = 15;
 
+        [Header("Coin Rewards")]
+        [Tooltip("Base coins awarded for completing the level")]
+        public int baseCoinReward = 50;
+        [Tooltip("Bonus coins awarded per star earned")]
+        public int bonusCoinPerStar = 10;
+
         /// <summary>
         /// Calculates star rating based on the player's move count.
         /// </summary>
@@ -39,11 +45,21 @@ namespace PushTheBox.Level
             return 1;
         }
 
+        /// <summary>
+        /// Calculates total coin reward based on star rating achieved.
+        /// </summary>
+        public int CalculateCoinReward(int stars)
+        {
+            return Mathf.Max(0, baseCoinReward + (stars * bonusCoinPerStar));
+        }
+
         private void OnValidate()
         {
             if (width < 3) width = 3;
             if (height < 3) height = 3;
             if (twoStarMoves < threeStarMoves) twoStarMoves = threeStarMoves + 5;
+            if (baseCoinReward < 0) baseCoinReward = 0;
+            if (bonusCoinPerStar < 0) bonusCoinPerStar = 0;
         }
     }
 }

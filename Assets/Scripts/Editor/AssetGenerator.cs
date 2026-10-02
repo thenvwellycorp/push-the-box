@@ -32,6 +32,7 @@ namespace PushTheBox.EditorTools
             File.WriteAllBytes(Path.Combine(artDir, "Wall.png"), CreateWallTexture().EncodeToPNG());
             File.WriteAllBytes(Path.Combine(artDir, "Floor.png"), CreateFloorTexture().EncodeToPNG());
             File.WriteAllBytes(Path.Combine(artDir, "Star.png"), CreateStarTexture().EncodeToPNG());
+            File.WriteAllBytes(Path.Combine(artDir, "Coin.png"), CreateCoinTexture().EncodeToPNG());
             File.WriteAllBytes(Path.Combine(artDir, "ButtonBg.png"), CreateButtonTexture().EncodeToPNG());
 
             AssetDatabase.Refresh();
@@ -44,6 +45,7 @@ namespace PushTheBox.EditorTools
             ConfigureSpriteImport(Path.Combine(artDir, "Wall.png"));
             ConfigureSpriteImport(Path.Combine(artDir, "Floor.png"));
             ConfigureSpriteImport(Path.Combine(artDir, "Star.png"));
+            ConfigureSpriteImport(Path.Combine(artDir, "Coin.png"));
             ConfigureSpriteImport(Path.Combine(artDir, "ButtonBg.png"), new Vector4(24, 24, 24, 24));
         }
 
@@ -325,6 +327,78 @@ namespace PushTheBox.EditorTools
             }
         }
 
+        private static Texture2D CreateCoinTexture()
+        {
+            int size = 128;
+            Texture2D tex = new Texture2D(size, size, TextureFormat.RGBA32, false);
+            Color transparent = new Color(0, 0, 0, 0);
+            Color outerBorder = new Color(0.78f, 0.48f, 0.05f, 1f); // Dark Gold border
+            Color rimColor = new Color(1f, 0.82f, 0.12f, 1f); // Bright Gold rim
+            Color innerBg = new Color(0.98f, 0.68f, 0.08f, 1f); // Warm coin center
+            Color symbolColor = new Color(1f, 0.95f, 0.5f, 1f); // Shiny star / highlight
+            Color specularHighlight = new Color(1f, 1f, 1f, 0.75f); // Specular gleam
+
+            Vector2 center = new Vector2(size * 0.5f, size * 0.5f);
+            float outerRadius = size * 0.44f;
+            float innerRadius = size * 0.35f;
+
+            for (int y = 0; y < size; y++)
+            {
+                for (int x = 0; x < size; x++)
+                {
+                    Vector2 pt = new Vector2(x, y) - center;
+                    float dist = pt.magnitude;
+
+                    if (dist > outerRadius)
+                    {
+                        tex.SetPixel(x, y, transparent);
+                    }
+                    else if (dist > outerRadius - 3.5f)
+                    {
+                        tex.SetPixel(x, y, outerBorder);
+                    }
+                    else if (dist > innerRadius)
+                    {
+                        float t = (pt.y / outerRadius + 1f) * 0.5f;
+                        Color c = Color.Lerp(rimColor * 0.9f, rimColor, t);
+                        tex.SetPixel(x, y, c);
+                    }
+                    else if (dist > innerRadius - 2.5f)
+                    {
+                        tex.SetPixel(x, y, outerBorder);
+                    }
+                    else
+                    {
+                        float angle = Mathf.Atan2(pt.y, pt.x);
+                        float starR = (innerRadius * 0.45f) + (innerRadius * 0.35f) * Mathf.Cos(5f * angle);
+
+                        if (dist <= starR)
+                        {
+                            tex.SetPixel(x, y, symbolColor);
+                        }
+                        else
+                        {
+                            float t = (pt.y / innerRadius + 1f) * 0.5f;
+                            Color c = Color.Lerp(innerBg * 0.85f, innerBg * 1.1f, t);
+                            tex.SetPixel(x, y, c);
+                        }
+                    }
+
+                    if (dist < outerRadius - 4f && dist > innerRadius + 1f && pt.x < 0 && pt.y > 0)
+                    {
+                        float angle = Mathf.Atan2(pt.y, -pt.x);
+                        if (angle > 0.5f && angle < 1.1f)
+                        {
+                            tex.SetPixel(x, y, specularHighlight);
+                        }
+                    }
+                }
+            }
+
+            tex.Apply();
+            return tex;
+        }
+
         private static Texture2D CreateButtonTexture()
         {
             int size = 128;
@@ -389,7 +463,7 @@ namespace PushTheBox.EditorTools
                 BuildPerimeterWalls(5, 5),
                 new Vector2Int[] { new Vector2Int(2, 2) },
                 new Vector2Int[] { new Vector2Int(3, 2) },
-                2, 4);
+                2, 4, 50, 10);
 
             // Level 2: Around the Corner (6x6)
             var walls2 = new System.Collections.Generic.List<Vector2Int>(BuildPerimeterWalls(6, 6));
@@ -400,7 +474,7 @@ namespace PushTheBox.EditorTools
                 walls2.ToArray(),
                 new Vector2Int[] { new Vector2Int(3, 2) },
                 new Vector2Int[] { new Vector2Int(3, 4) },
-                5, 8);
+                5, 8, 60, 10);
 
             // Level 3: Double Trouble (7x7)
             var walls3 = new System.Collections.Generic.List<Vector2Int>(BuildPerimeterWalls(7, 7));
@@ -410,7 +484,7 @@ namespace PushTheBox.EditorTools
                 walls3.ToArray(),
                 new Vector2Int[] { new Vector2Int(2, 3), new Vector2Int(4, 3) },
                 new Vector2Int[] { new Vector2Int(2, 2), new Vector2Int(4, 2) },
-                7, 12);
+                7, 12, 75, 15);
 
             // Level 4: Storage Room (7x7)
             var walls4 = new System.Collections.Generic.List<Vector2Int>(BuildPerimeterWalls(7, 7));
@@ -423,7 +497,7 @@ namespace PushTheBox.EditorTools
                 walls4.ToArray(),
                 new Vector2Int[] { new Vector2Int(3, 4), new Vector2Int(3, 2) },
                 new Vector2Int[] { new Vector2Int(1, 4), new Vector2Int(5, 2) },
-                12, 18);
+                12, 18, 90, 15);
 
             // Level 5: Warehouse Master (8x8)
             var walls5 = new System.Collections.Generic.List<Vector2Int>(BuildPerimeterWalls(8, 8));
@@ -436,7 +510,7 @@ namespace PushTheBox.EditorTools
                 walls5.ToArray(),
                 new Vector2Int[] { new Vector2Int(2, 4), new Vector2Int(5, 4), new Vector2Int(5, 2) },
                 new Vector2Int[] { new Vector2Int(2, 5), new Vector2Int(5, 5), new Vector2Int(2, 2) },
-                18, 26);
+                18, 26, 120, 20);
         }
 
         private static Vector2Int[] BuildPerimeterWalls(int width, int height)
@@ -456,7 +530,8 @@ namespace PushTheBox.EditorTools
         }
 
         private static void CreateLevelAsset(string folder, string fileName, int id, string name, int w, int h,
-            Vector2Int playerPos, Vector2Int[] walls, Vector2Int[] boxes, Vector2Int[] targets, int stars3, int stars2)
+            Vector2Int playerPos, Vector2Int[] walls, Vector2Int[] boxes, Vector2Int[] targets, int stars3, int stars2,
+            int baseCoins = 50, int coinsPerStar = 10)
         {
             string path = $"{folder}/{fileName}.asset";
             LevelData asset = AssetDatabase.LoadAssetAtPath<LevelData>(path);
@@ -476,6 +551,8 @@ namespace PushTheBox.EditorTools
             asset.targets = targets;
             asset.threeStarMoves = stars3;
             asset.twoStarMoves = stars2;
+            asset.baseCoinReward = baseCoins;
+            asset.bonusCoinPerStar = coinsPerStar;
 
             EditorUtility.SetDirty(asset);
         }

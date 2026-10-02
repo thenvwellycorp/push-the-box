@@ -1,0 +1,62 @@
+{
+  "concept_id": "push_the_box_v1",
+  "interstitial": {
+    "after_rewarded_seconds": 0,
+    "bands": [
+      {
+        "from_level": 1,
+        "enabled": true,
+        "min_level_gap": 1
+      }
+    ],
+    "placements": {
+      "after_level_complete": {
+        "enabled": true
+      },
+      "after_level_fail": {
+        "enabled": true
+      },
+      "map_return": {
+        "enabled": true
+      }
+    }
+  },
+  "rewarded": {
+    "placements": {
+      "revive_offer": {
+        "enabled": true
+      },
+      "extra_moves_offer": {
+        "enabled": true
+      },
+      "free_booster_offer": {
+        "enabled": true
+      },
+      "double_coin": {
+        "enabled": true
+      }
+    }
+  },
+  "banner": {
+    "start_level": 1,
+    "placements": {
+      "banner_map": {
+        "enabled": true
+      },
+      "banner_gameplay": {
+        "enabled": true
+      }
+    }
+  },
+  "app_open": {
+    "min_background_seconds": 10,
+    "skip_cold_start": true,
+    "show_during_level": false,
+    "placements": {
+      "app_open": {
+        "enabled": true,
+        "cooldown_seconds": 60
+      }
+    }
+  }
+}

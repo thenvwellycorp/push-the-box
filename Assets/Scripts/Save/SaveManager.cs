@@ -18,11 +18,12 @@ namespace PushTheBox.Save
     {
         public int highestUnlockedLevel = 1;
         public bool soundEnabled = true;
+        public int totalCoins = 0;
         public List<LevelSaveEntry> levels = new List<LevelSaveEntry>();
     }
 
     /// <summary>
-    /// Handles persistent progress (unlocked levels, stars, best moves, settings)
+    /// Handles persistent progress (unlocked levels, stars, best moves, coins, settings)
     /// using JSON serialization and PlayerPrefs. Isolated from gameplay logic.
     /// </summary>
     public class SaveManager : MonoBehaviour
@@ -34,8 +35,10 @@ namespace PushTheBox.Save
         private SaveData data;
 
         public bool SoundEnabled => data.soundEnabled;
+        public int Coins => data != null ? data.totalCoins : 0;
 
         public event Action OnSaveDataChanged;
+        public event Action<int> OnCoinsChanged;
 
         private void Awake()
         {
@@ -73,6 +76,9 @@ namespace PushTheBox.Save
 
             if (data.highestUnlockedLevel < 1)
                 data.highestUnlockedLevel = 1;
+
+            if (data.totalCoins < 0)
+                data.totalCoins = 0;
         }
 
         public void Save()
@@ -106,7 +112,29 @@ namespace PushTheBox.Save
             return data.levels.Find(l => l.levelId == levelId);
         }
 
-        public void SaveLevelResult(int levelId, int stars, int moves)
+        public int GetCoins()
+        {
+            return data != null ? data.totalCoins : 0;
+        }
+
+        public void AddCoins(int amount)
+        {
+            if (amount <= 0 || data == null) return;
+            data.totalCoins += amount;
+            Save();
+            OnCoinsChanged?.Invoke(data.totalCoins);
+        }
+
+        public bool SpendCoins(int amount)
+        {
+            if (amount <= 0 || data == null || data.totalCoins < amount) return false;
+            data.totalCoins -= amount;
+            Save();
+            OnCoinsChanged?.Invoke(data.totalCoins);
+            return true;
+        }
+
+        public void SaveLevelResult(int levelId, int stars, int moves, int coinsEarned = 0)
         {
             LevelSaveEntry entry = data.levels.Find(l => l.levelId == levelId);
             if (entry == null)
@@ -136,6 +164,12 @@ namespace PushTheBox.Save
                 data.highestUnlockedLevel = nextLevel;
             }
 
+            if (coinsEarned > 0)
+            {
+                data.totalCoins += coinsEarned;
+                OnCoinsChanged?.Invoke(data.totalCoins);
+            }
+
             Save();
         }
 
@@ -150,6 +184,7 @@ namespace PushTheBox.Save
             PlayerPrefs.DeleteKey(SAVE_KEY);
             data = new SaveData();
             Save();
+            OnCoinsChanged?.Invoke(0);
         }
     }
 }

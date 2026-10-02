@@ -1,19 +1,24 @@
 using System;
+using System.Collections;
 using UnityEngine;
+using PushTheBox.Core;
 
 namespace PushTheBox.Gameplay
 {
     /// <summary>
     /// Analyzes the board for deadlock conditions (e.g. box pushed into a non-target corner).
-    /// Provides early warning to the player to undo or restart.
+    /// Provides early warning to the player and triggers Game Over when a corner deadlock occurs.
     /// </summary>
     public class DeadlockDetector : MonoBehaviour
     {
         public static DeadlockDetector Instance { get; private set; }
 
         public event Action<bool> OnDeadlockStatusChanged;
+        public event Action OnCornerDeadlock;
 
         public bool IsDeadlocked { get; private set; }
+
+        private Coroutine deadlockGameOverCoroutine;
 
         private void Awake()
         {
@@ -83,6 +88,45 @@ namespace PushTheBox.Gameplay
             {
                 OnDeadlockStatusChanged?.Invoke(IsDeadlocked);
             }
+
+            if (IsDeadlocked)
+            {
+                OnCornerDeadlock?.Invoke();
+                TriggerDeadlockGameOver();
+            }
+            else
+            {
+                CancelDeadlockGameOver();
+            }
+        }
+
+        private void TriggerDeadlockGameOver()
+        {
+            if (GameStateManager.Instance != null && GameStateManager.Instance.IsLevelCompleted())
+                return;
+
+            CancelDeadlockGameOver();
+            deadlockGameOverCoroutine = StartCoroutine(DeadlockGameOverRoutine());
+        }
+
+        private void CancelDeadlockGameOver()
+        {
+            if (deadlockGameOverCoroutine != null)
+            {
+                StopCoroutine(deadlockGameOverCoroutine);
+                deadlockGameOverCoroutine = null;
+            }
+        }
+
+        private IEnumerator DeadlockGameOverRoutine()
+        {
+            // Give 0.35s for the box push animation to complete and settle
+            yield return new WaitForSeconds(0.35f);
+
+            if (IsDeadlocked && GameStateManager.Instance != null && GameStateManager.Instance.IsPlaying())
+            {
+                GameStateManager.Instance.SetState(GameState.GameOver);
+            }
         }
 
         private bool IsImpassable(Vector2Int pos)
@@ -92,6 +136,7 @@ namespace PushTheBox.Gameplay
 
         public void ResetDeadlock()
         {
+            CancelDeadlockGameOver();
             if (IsDeadlocked)
             {
                 IsDeadlocked = false;

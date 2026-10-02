@@ -54,3 +54,5 @@ MonoBehaviour:
   - {x: 5, y: 2}
   threeStarMoves: 12
   twoStarMoves: 18
+  baseCoinReward: 90
+  bonusCoinPerStar: 15

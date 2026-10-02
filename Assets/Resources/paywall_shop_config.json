@@ -1,0 +1,105 @@
+{
+  "concept_id": "push_the_box_v1",
+  "cfg_ver": "shop_2026w40_ptbox_b",
+  "wallet_display": ["coin"],
+  "shelves": [
+    {
+      "shelf_id": "front",
+      "header": { "text": "SPECIAL OFFERS", "style": "primary" },
+      "cards": [
+        {
+          "offer_id": "remove_ads_hero",
+          "card_template": "hero_card",
+          "icon_key": "remove_ads_hero",
+          "product_id": "no_ads",
+          "product_type": "non_consumable",
+          "visible": true,
+          "purchase_limit": 1,
+          "title": "REMOVE ADS",
+          "bullets": [
+            "Remove ads between levels",
+            "Remove banner ads",
+            "Optional ads for rewards will stay"
+          ],
+          "badge": { "text": "HOT", "style": "gift" },
+          "entitlements": ["no_interstitial", "no_banner"],
+          "grants": [
+            { "resource_id": "coin", "amount": 1000 }
+          ]
+        },
+        {
+          "offer_id": "free_coins_rewarded",
+          "card_template": "rewarded_card",
+          "icon_key": "free_coins_ad",
+          "placement_id": "shop_free_coins",
+          "visible": true,
+          "title": "FREE COINS",
+          "body": "Watch one advertisement and receive 100 free coins instantly.",
+          "grants": [{ "resource_id": "coin", "amount": 100 }],
+          "cooldown_seconds": 60,
+          "daily_cap": 20
+        }
+      ]
+    },
+    {
+      "shelf_id": "expanded",
+      "header": { "text": "COIN SHOP", "style": "secondary" },
+      "collapsed_by_default": false,
+      "cards": [
+        {
+          "offer_id": "coins_tier_1",
+          "card_template": "grid_tile",
+          "icon_key": "coin_pile_1",
+          "product_id": "coin_500",
+          "product_type": "consumable",
+          "visible": true,
+          "title": "500 COINS",
+          "grants": [{ "resource_id": "coin", "amount": 500 }]
+        },
+        {
+          "offer_id": "coins_tier_2",
+          "card_template": "grid_tile",
+          "icon_key": "coin_pile_2",
+          "product_id": "coin_1200",
+          "product_type": "consumable",
+          "visible": true,
+          "title": "1200 COINS",
+          "grants": [{ "resource_id": "coin", "amount": 1200 }]
+        },
+        {
+          "offer_id": "coins_tier_3",
+          "card_template": "grid_tile",
+          "icon_key": "coin_pile_3",
+          "product_id": "coin_2500",
+          "product_type": "consumable",
+          "visible": true,
+          "title": "2500 COINS",
+          "badge": { "text": "POPULAR", "style": "popular" },
+          "grants": [{ "resource_id": "coin", "amount": 2500 }]
+        },
+        {
+          "offer_id": "coins_tier_4",
+          "card_template": "grid_tile",
+          "icon_key": "coin_pile_4",
+          "product_id": "coin_6000",
+          "product_type": "consumable",
+          "visible": true,
+          "title": "6000 COINS",
+          "badge": { "text": "BEST VALUE", "style": "value" },
+          "grants": [{ "resource_id": "coin", "amount": 6000 }]
+        }
+      ]
+    }
+  ],
+  "offer_placements": {
+    "win_screen": {
+      "enabled": true,
+      "offer_ids": ["coins_tier_1", "coins_tier_2"],
+      "every_n_wins": 2
+    },
+    "home_remove_ads": {
+      "enabled": true,
+      "offer_ids": ["remove_ads_hero"]
+    }
+  }
+}

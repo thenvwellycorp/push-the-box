@@ -13,6 +13,8 @@ namespace PushTheBox.Level
         public string levelName;
         public int moves;
         public int stars;
+        public int coinsEarned;
+        public int totalCoins;
         public bool hasNextLevel;
     }
 
@@ -32,6 +34,7 @@ namespace PushTheBox.Level
         public LevelData CurrentLevelData => (CurrentLevelIndex >= 0 && CurrentLevelIndex < levels.Count) ? levels[CurrentLevelIndex] : null;
         public int TotalLevels => levels.Count;
         public int MoveCount { get; private set; } = 0;
+        public LevelCompletionData? LastCompletionData { get; private set; }
 
         // Events for UI and Audio decoupling
         public event Action<LevelData> OnLevelLoaded;
@@ -101,6 +104,7 @@ namespace PushTheBox.Level
             }
 
             MoveCount = 0;
+            LastCompletionData = null;
             if (UndoManager.Instance != null)
             {
                 UndoManager.Instance.Clear();
@@ -196,10 +200,37 @@ namespace PushTheBox.Level
             CheckCompletion();
         }
 
+        public void ReviveFromGameOver()
+        {
+            if (GameStateManager.Instance != null)
+            {
+                GameStateManager.Instance.SetState(GameState.Playing);
+            }
+
+            if (DeadlockDetector.Instance != null)
+            {
+                DeadlockDetector.Instance.ResetDeadlock();
+            }
+
+            if (UndoManager.Instance != null && UndoManager.Instance.CanUndo)
+            {
+                UndoMove();
+            }
+            else
+            {
+                RestartLevel();
+            }
+        }
+
         public void UndoMove()
         {
-            if (GameStateManager.Instance != null && !GameStateManager.Instance.IsPlaying())
+            if (GameStateManager.Instance != null && !GameStateManager.Instance.IsPlaying() && GameStateManager.Instance.CurrentState != GameState.GameOver)
                 return;
+
+            if (GameStateManager.Instance != null && GameStateManager.Instance.CurrentState == GameState.GameOver)
+            {
+                GameStateManager.Instance.SetState(GameState.Playing);
+            }
 
             if (UndoManager.Instance == null || !UndoManager.Instance.CanUndo)
                 return;
@@ -236,6 +267,7 @@ namespace PushTheBox.Level
             // 4. Re-check deadlock
             if (DeadlockDetector.Instance != null)
             {
+                DeadlockDetector.Instance.ResetDeadlock();
                 DeadlockDetector.Instance.CheckDeadlocks();
             }
         }
@@ -260,11 +292,21 @@ namespace PushTheBox.Level
 
             LevelData data = CurrentLevelData;
             int stars = data != null ? data.CalculateStars(MoveCount) : 1;
+            int coinsEarned = data != null ? data.CalculateCoinReward(stars) : (50 + stars * 10);
 
-            if (SaveManager.Instance != null && data != null)
+            if (SaveManager.Instance != null)
             {
-                SaveManager.Instance.SaveLevelResult(data.levelId, stars, MoveCount);
+                if (data != null)
+                {
+                    SaveManager.Instance.SaveLevelResult(data.levelId, stars, MoveCount, coinsEarned);
+                }
+                else
+                {
+                    SaveManager.Instance.AddCoins(coinsEarned);
+                }
             }
+
+            int totalCoins = SaveManager.Instance != null ? SaveManager.Instance.Coins : coinsEarned;
 
             LevelCompletionData completionData = new LevelCompletionData
             {
@@ -272,9 +314,12 @@ namespace PushTheBox.Level
                 levelName = data != null ? data.levelName : $"Level {CurrentLevelIndex + 1}",
                 moves = MoveCount,
                 stars = stars,
+                coinsEarned = coinsEarned,
+                totalCoins = totalCoins,
                 hasNextLevel = HasNextLevel()
             };
 
+            LastCompletionData = completionData;
             OnLevelCompleted?.Invoke(completionData);
         }
     }
