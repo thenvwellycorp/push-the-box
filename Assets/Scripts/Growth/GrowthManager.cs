@@ -66,6 +66,16 @@ namespace PushTheBox.GrowthIntegration
     }
 
     /// <summary>
+    /// Offer placement ids for in-game offers drawn outside the Shop. Must match GameCatalog.OfferPlacements
+    /// and "offer_placements" in paywall_shop_config.json — a typo silently never shows anything.
+    /// </summary>
+    public static class OfferPlacementIds
+    {
+        public const string WinScreen = "win_screen";
+        public const string HomeRemoveAds = "home_remove_ads";
+    }
+
+    /// <summary>
     /// Central manager for Growth SDK integration in Push The Box.
     /// Configures GameCatalog, Ads (AdMob + UMP), IAP, Economy ledger, and Shop.
     /// Handles telemetry hooks for Level progression and Ad placements.
@@ -141,7 +151,7 @@ namespace PushTheBox.GrowthIntegration
                     EmbeddedAdsConfigJson = adsJson,
                     LevelVersionsJson = "{\"levels\":{}}",
                     TutorialId = "tutorial_v1",
-                    OfferPlacements = new[] { "win_screen", "home_remove_ads" }
+                    OfferPlacements = new[] { OfferPlacementIds.WinScreen, OfferPlacementIds.HomeRemoveAds }
                 };
 
                 var config = new GrowthConfig
@@ -394,6 +404,34 @@ namespace PushTheBox.GrowthIntegration
         {
             if (!_isInitialized) return false;
             return Growth.Purchase.IsOwned("no_ads") || Growth.Shop.HasEntitlement("no_interstitial");
+        }
+
+        /// <summary>
+        /// Returns the offer to draw at an in-game placement right now, or null when nothing should be drawn.
+        /// Call it just before drawing (never cache it), then call ReportShown() once it is on screen.
+        /// </summary>
+        public OfferView GetOffer(string placementId)
+        {
+            if (!_isInitialized) return null;
+            return Growth.Offers.Get(placementId);
+        }
+
+        /// <summary>
+        /// Restores non-consumable purchases (Remove Ads). onDone is always invoked exactly once on the main thread.
+        /// </summary>
+        public void RestorePurchases(Action<RestoreResult> onDone)
+        {
+            if (!_isInitialized)
+            {
+                onDone?.Invoke(new RestoreResult { Failed = true, Reason = RestoreResult.NotConfigured });
+                return;
+            }
+
+            Growth.Purchase.Restore(result =>
+            {
+                Debug.Log($"[GrowthManager] Restore finished: restored={result.RestoredCount} failed={result.Failed} reason={result.Reason}");
+                onDone?.Invoke(result);
+            });
         }
 
         /// <summary>

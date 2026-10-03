@@ -49,6 +49,19 @@ namespace PushTheBox.UI
         private bool isShowing = false;
         private LevelCompletionData? currentShownData = null;
 
+        // In-game offer (win_screen) drawn as an extra section under the card instead of a separate popup.
+        private const float WinOfferCardLift = 0.08f;
+        private RectTransform winOfferSection;
+        private Text winOfferTitleText;
+        private Text winOfferGrantText;
+        private Text winOfferStatusText;
+        private Button winOfferBuyButton;
+        private Text winOfferBuyText;
+        private OfferView winOffer;
+        private long winOfferCoins;
+        private bool winOfferPurchaseInFlight;
+        private bool cardLifted;
+
         private void Awake()
         {
             EnsureCoinUI();
@@ -190,6 +203,8 @@ namespace PushTheBox.UI
             isShowing = false;
             currentShownData = null;
 
+            HideWinOffer();
+
             if (LevelManager.Instance != null)
             {
                 LevelManager.Instance.OnLevelCompleted -= HandleLevelCompleted;
@@ -261,6 +276,7 @@ namespace PushTheBox.UI
             }
 
             StopAllCoroutines();
+            HideWinOffer();
             StartCoroutine(AnimateCompletionRoutine(data));
         }
 
@@ -361,6 +377,10 @@ namespace PushTheBox.UI
 
         private IEnumerator AnimateCompletionRoutine(LevelCompletionData data)
         {
+            // One frame later so GrowthManager has reported Level.Complete (win count used by every_n_wins).
+            yield return null;
+            TryShowWinOffer();
+
             // Reset all stars to inactive
             if (starImages != null)
             {
@@ -447,7 +467,144 @@ namespace PushTheBox.UI
                     }
                 }
             }
+
         }
+
+        #region Win Screen Offer
+
+        /// <summary>
+        /// Adds the SDK's win_screen offer to this card when one is picked (frequency such as every_n_wins is remote
+        /// config). Asked right before drawing, per SDK rule L6, and reported as shown once visible.
+        /// </summary>
+        private void TryShowWinOffer()
+        {
+            if (!isShowing || winOfferPurchaseInFlight || GrowthManager.Instance == null) return;
+
+            OfferView offer = GrowthManager.Instance.GetOffer(OfferPlacementIds.WinScreen);
+            if (offer == null || !EnsureWinOfferSection()) return;
+
+            winOffer = offer;
+            winOfferCoins = OfferPopupUI.CoinsGranted(offer);
+
+            string title = offer.Title ?? string.Empty;
+            if (!string.IsNullOrEmpty(offer.BadgeText)) title += $"  <color=#FF6B7A>{offer.BadgeText}</color>";
+            winOfferTitleText.text = title;
+            winOfferGrantText.text = winOfferCoins > 0 ? $"+{winOfferCoins}" : (offer.Body ?? string.Empty);
+            winOfferBuyText.text = string.IsNullOrEmpty(offer.LocalizedPrice) ? "MUA" : offer.LocalizedPrice;
+            winOfferStatusText.text = string.Empty;
+            winOfferBuyButton.gameObject.SetActive(true);
+            winOfferBuyButton.interactable = true;
+
+            SetCardLifted(true);
+            winOfferSection.gameObject.SetActive(true);
+            offer.ReportShown();
+        }
+
+        private void HideWinOffer()
+        {
+            winOffer = null;
+            if (winOfferSection != null) winOfferSection.gameObject.SetActive(false);
+            SetCardLifted(false);
+        }
+
+        /// <summary>Moves the card up while the offer section hangs under it, so card + offer stay centred.</summary>
+        private void SetCardLifted(bool lifted)
+        {
+            RectTransform cardRt = dialogContent as RectTransform;
+            if (cardRt == null || cardLifted == lifted) return;
+            Vector2 shift = new Vector2(0f, lifted ? WinOfferCardLift : -WinOfferCardLift);
+            cardRt.anchorMin += shift;
+            cardRt.anchorMax += shift;
+            cardLifted = lifted;
+        }
+
+        private bool EnsureWinOfferSection()
+        {
+            if (winOfferSection != null) return true;
+            if (dialogContent == null) return false;
+
+            Font f = CoinUIHelper.GetDefaultFont(titleText != null ? titleText.font : null);
+
+            // Hangs directly below the card (anchors below 0) with the card's own background, so it reads as one panel.
+            GameObject section = OfferPopupUI.CreateChild("WinOfferSection", dialogContent, new Vector2(0f, -0.30f), new Vector2(1f, 0f));
+            Image cardBg = dialogContent.GetComponent<Image>();
+            section.AddComponent<Image>().color = cardBg != null ? cardBg.color : new Color(0.14f, 0.18f, 0.25f, 1f);
+            winOfferSection = section.GetComponent<RectTransform>();
+
+            GameObject divider = OfferPopupUI.CreateChild("Divider", section.transform, new Vector2(0.05f, 0.975f), new Vector2(0.95f, 1f));
+            divider.AddComponent<Image>().color = new Color(1f, 1f, 1f, 0.12f);
+
+            winOfferTitleText = OfferPopupUI.CreateText(section.transform, f, string.Empty, 38, FontStyle.Bold, Color.white,
+                new Vector2(0.06f, 0.55f), new Vector2(0.62f, 0.90f));
+            winOfferTitleText.alignment = TextAnchor.MiddleLeft;
+
+            GameObject icon = OfferPopupUI.CreateChild("CoinIcon", section.transform, new Vector2(0.06f, 0.26f), new Vector2(0.14f, 0.54f));
+            Image iconImg = icon.AddComponent<Image>();
+            iconImg.sprite = CoinUIHelper.GetOrCreateCoinSprite();
+            iconImg.preserveAspect = true;
+
+            winOfferGrantText = OfferPopupUI.CreateText(section.transform, f, string.Empty, 36, FontStyle.Bold, new Color(1f, 0.86f, 0.2f, 1f),
+                new Vector2(0.16f, 0.26f), new Vector2(0.62f, 0.54f));
+            winOfferGrantText.alignment = TextAnchor.MiddleLeft;
+
+            winOfferBuyButton = OfferPopupUI.CreateButton(section.transform, f, "WinOfferBuyButton", new Color(0.2f, 0.72f, 0.4f, 1f),
+                new Vector2(0.64f, 0.28f), new Vector2(0.94f, 0.86f), 36, out winOfferBuyText);
+            winOfferBuyButton.onClick.AddListener(OnWinOfferBuyClicked);
+
+            winOfferStatusText = OfferPopupUI.CreateText(section.transform, f, string.Empty, 22, FontStyle.Italic, new Color(1f, 0.85f, 0.45f, 1f),
+                new Vector2(0.05f, 0.03f), new Vector2(0.95f, 0.24f));
+
+            section.SetActive(false);
+            return true;
+        }
+
+        private void OnWinOfferBuyClicked()
+        {
+            if (winOffer == null || winOfferPurchaseInFlight) return;
+            if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundType.ButtonClick);
+
+            OfferView offer = winOffer;
+            winOfferPurchaseInFlight = true;
+            winOfferBuyButton.interactable = false;
+            winOfferStatusText.text = "Đang xử lý...";
+
+            offer.Buy(result =>
+            {
+                winOfferPurchaseInFlight = false;
+                Debug.Log($"[LevelCompleteUI] {offer.PlacementId}/{offer.OfferId} purchase result: {result}");
+                if (this == null || winOffer != offer) return; // the card moved on while the store dialog was open
+
+                winOfferBuyButton.interactable = true;
+                string status = OfferPopupUI.StatusFor(result);
+                switch (result.Outcome)
+                {
+                    case OfferPurchaseOutcome.Purchased:
+                        // The SDK already credited the pack through the inventory adapter; only refresh what this card shows.
+                        if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundType.CoinReward);
+                        winOfferStatusText.text = winOfferCoins > 0 ? $"Đã nhận +{winOfferCoins} coin!" : "Mua thành công!";
+                        winOfferBuyButton.gameObject.SetActive(false);
+                        if (totalCoinsText != null && SaveManager.Instance != null)
+                            totalCoinsText.text = $"{SaveManager.Instance.Coins}";
+                        break;
+
+                    case OfferPurchaseOutcome.Pending:
+                        winOfferStatusText.text = status;
+                        winOfferBuyButton.gameObject.SetActive(false);
+                        break;
+
+                    case OfferPurchaseOutcome.Failed:
+                        winOfferStatusText.text = status;
+                        break;
+
+                    case OfferPurchaseOutcome.NotShown:
+                        if (status != null) winOfferStatusText.text = status;
+                        else HideWinOffer();
+                        break;
+                }
+            });
+        }
+
+        #endregion
 
         private void OnReplayClicked()
         {
@@ -504,6 +661,7 @@ namespace PushTheBox.UI
         {
             isShowing = false;
             currentShownData = null;
+            HideWinOffer();
             if (modalRoot != null) modalRoot.SetActive(false);
             else gameObject.SetActive(false);
         }
