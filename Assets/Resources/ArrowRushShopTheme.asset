@@ -12,36 +12,163 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087bfa7742dabba449d1bd05d501032f, type: 3}
   m_Name: ArrowRushShopTheme
   m_EditorClassIdentifier: Growth.Paywall.Unity::Growth.ShopTheme
-  TitleFont: {fileID: 11400000, guid: f177d36c0eaf4ad409c6445c76d428a0, type: 2}
-  BodyFont: {fileID: 11400000, guid: 79b19243987d81a46839b83510b55b98, type: 2}
-  PriceFont: {fileID: 11400000, guid: 79b19243987d81a46839b83510b55b98, type: 2}
+  TitleFont: {fileID: 0}
+  BodyFont: {fileID: 0}
+  PriceFont: {fileID: 0}
+  GrantFont: {fileID: 0}
   Primary:
     Background: {fileID: 21300000, guid: 86d1e93c1d7653f4a9f7b608a81e3d56, type: 3}
     Tint: {r: 1, g: 1, b: 1, a: 1}
     TextColor: {r: 1, g: 1, b: 1, a: 1}
+    OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+    OutlineWidth: 0
+    Text:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
   Secondary:
     Background: {fileID: 21300000, guid: cb769b0adb101694cb9918c44b86932d, type: 3}
     Tint: {r: 1, g: 1, b: 1, a: 1}
     TextColor: {r: 1, g: 1, b: 1, a: 1}
+    OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+    OutlineWidth: 0
+    Text:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
   Highlight:
     Background: {fileID: 21300000, guid: 38b740bd9aaf5054998ba83d43a04e3e, type: 3}
     Tint: {r: 1, g: 1, b: 1, a: 1}
     TextColor: {r: 1, g: 1, b: 1, a: 1}
+    OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+    OutlineWidth: 0
+    Text:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
   Value:
     Background: {fileID: 21300000, guid: 3c8e2f605c789234bb63b4f0255a33d4, type: 3}
     Tint: {r: 1, g: 1, b: 1, a: 1}
     TextColor: {r: 1, g: 1, b: 1, a: 1}
+    OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+    OutlineWidth: 0
+    Text:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
   Popular:
     Background: {fileID: 21300000, guid: 9773a413f8b143843a21f5bf77c0975d, type: 3}
     Tint: {r: 1, g: 1, b: 1, a: 1}
     TextColor: {r: 1, g: 1, b: 1, a: 1}
+    OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+    OutlineWidth: 0
+    Text:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
   Gift:
     Background: {fileID: 21300000, guid: 44d63157e6a1b984db60c91ac082b446, type: 3}
     Tint: {r: 1, g: 1, b: 1, a: 1}
     TextColor: {r: 1, g: 1, b: 1, a: 1}
+    OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+    OutlineWidth: 0
+    Text:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
   ResourceIcons:
   - ResourceId: coin
-    Icon: {fileID: 21300000, guid: 4b8fd8c601da84c478a0aa8a43a93f41, type: 3}
+    Icon: {fileID: 21300000, guid: 025985778d2abd44694863d57e8a3e95, type: 3}
     DisplayName: Coins
   - ResourceId: hint
     Icon: {fileID: 21300000, guid: e66b88f35d0226a458f531616146f551, type: 3}
@@ -52,6 +179,12 @@ MonoBehaviour:
   - ResourceId: magnet
     Icon: {fileID: 21300000, guid: 255b6e6c390ccc7459996c09bcf5ccc4, type: 3}
     DisplayName: Magnet
+  - ResourceId: ticket
+    Icon: {fileID: 21300000, guid: 4a60791215ae09242aebd4d19a80fb4a, type: 3}
+    DisplayName: Tickets
+  - ResourceId: undo
+    Icon: {fileID: 21300000, guid: 0c4b5c06720d4b51aee454bfe6e663ae, type: 3}
+    DisplayName: Undo
   OfferIcons:
   - IconKey: remove_ads_hero
     Icon: {fileID: 21300000, guid: 3aee80dca14b6ad4daee15bd10c68d1a, type: 3}
@@ -96,10 +229,163 @@ MonoBehaviour:
       GrantPanel: {fileID: 21300000, guid: bddcf7eaafed88049a91e5e320f18572, type: 3}
       DiscountBadge: {fileID: 21300000, guid: 5aff8832a43bd7b4bb69d3d7dce91661, type: 3}
       CoinGrantIcon: {fileID: 21300000, guid: 07f0f277b24a4bd4e9229960db23539d, type: 3}
-      TitleColor: {r: 1, g: 1, b: 1, a: 1}
-      BodyColor: {r: 0.15294118, g: 0.1764706, b: 0.38039216, a: 1}
-      PriceColor: {r: 1, g: 1, b: 1, a: 1}
-      ButtonTextColor: {r: 1, g: 1, b: 1, a: 1}
+      TitleColor: {r: 0, g: 0, b: 0, a: 0}
+      BodyColor: {r: 0, g: 0, b: 0, a: 0}
+      PriceColor: {r: 0, g: 0, b: 0, a: 0}
+      ButtonTextColor: {r: 0, g: 0, b: 0, a: 0}
+      TitleText:
+        Font: {fileID: 0}
+        FontMaterial: {fileID: 0}
+        Color: {r: 0, g: 0, b: 0, a: 0}
+        FontSize: 0
+        OverrideFontStyle: 0
+        FontStyle: 0
+        OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+        OutlineWidth: 0
+        FontSizeMin: 0
+        FontSizeMax: 0
+        OverrideAlignment: 0
+        Alignment: 514
+        OverrideLineSpacing: 0
+        LineSpacing: 0
+        OverrideCharacterSpacing: 0
+        CharacterSpacing: 0
+        OverrideWordWrap: 0
+        WordWrap: 0
+      BodyText:
+        Font: {fileID: 0}
+        FontMaterial: {fileID: 0}
+        Color: {r: 0, g: 0, b: 0, a: 0}
+        FontSize: 0
+        OverrideFontStyle: 0
+        FontStyle: 0
+        OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+        OutlineWidth: 0
+        FontSizeMin: 0
+        FontSizeMax: 0
+        OverrideAlignment: 0
+        Alignment: 514
+        OverrideLineSpacing: 0
+        LineSpacing: 0
+        OverrideCharacterSpacing: 0
+        CharacterSpacing: 0
+        OverrideWordWrap: 0
+        WordWrap: 0
+      BulletsText:
+        Font: {fileID: 0}
+        FontMaterial: {fileID: 0}
+        Color: {r: 0, g: 0, b: 0, a: 0}
+        FontSize: 0
+        OverrideFontStyle: 0
+        FontStyle: 0
+        OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+        OutlineWidth: 0
+        FontSizeMin: 0
+        FontSizeMax: 0
+        OverrideAlignment: 0
+        Alignment: 514
+        OverrideLineSpacing: 0
+        LineSpacing: 0
+        OverrideCharacterSpacing: 0
+        CharacterSpacing: 0
+        OverrideWordWrap: 0
+        WordWrap: 0
+      BadgeText:
+        Font: {fileID: 0}
+        FontMaterial: {fileID: 0}
+        Color: {r: 0, g: 0, b: 0, a: 0}
+        FontSize: 0
+        OverrideFontStyle: 0
+        FontStyle: 0
+        OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+        OutlineWidth: 0
+        FontSizeMin: 0
+        FontSizeMax: 0
+        OverrideAlignment: 0
+        Alignment: 514
+        OverrideLineSpacing: 0
+        LineSpacing: 0
+        OverrideCharacterSpacing: 0
+        CharacterSpacing: 0
+        OverrideWordWrap: 0
+        WordWrap: 0
+      PriceText:
+        Font: {fileID: 0}
+        FontMaterial: {fileID: 0}
+        Color: {r: 0, g: 0, b: 0, a: 0}
+        FontSize: 0
+        OverrideFontStyle: 0
+        FontStyle: 0
+        OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+        OutlineWidth: 0
+        FontSizeMin: 0
+        FontSizeMax: 0
+        OverrideAlignment: 0
+        Alignment: 514
+        OverrideLineSpacing: 0
+        LineSpacing: 0
+        OverrideCharacterSpacing: 0
+        CharacterSpacing: 0
+        OverrideWordWrap: 0
+        WordWrap: 0
+      GrantText:
+        Font: {fileID: 0}
+        FontMaterial: {fileID: 0}
+        Color: {r: 0, g: 0, b: 0, a: 0}
+        FontSize: 0
+        OverrideFontStyle: 0
+        FontStyle: 0
+        OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+        OutlineWidth: 0
+        FontSizeMin: 0
+        FontSizeMax: 0
+        OverrideAlignment: 0
+        Alignment: 514
+        OverrideLineSpacing: 0
+        LineSpacing: 0
+        OverrideCharacterSpacing: 0
+        CharacterSpacing: 0
+        OverrideWordWrap: 0
+        WordWrap: 0
+      NoticeText:
+        Font: {fileID: 0}
+        FontMaterial: {fileID: 0}
+        Color: {r: 0, g: 0, b: 0, a: 0}
+        FontSize: 0
+        OverrideFontStyle: 0
+        FontStyle: 0
+        OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+        OutlineWidth: 0
+        FontSizeMin: 0
+        FontSizeMax: 0
+        OverrideAlignment: 0
+        Alignment: 514
+        OverrideLineSpacing: 0
+        LineSpacing: 0
+        OverrideCharacterSpacing: 0
+        CharacterSpacing: 0
+        OverrideWordWrap: 0
+        WordWrap: 0
+      DiscountText: 
+      DiscountTextStyle:
+        Font: {fileID: 0}
+        FontMaterial: {fileID: 0}
+        Color: {r: 0, g: 0, b: 0, a: 0}
+        FontSize: 0
+        OverrideFontStyle: 0
+        FontStyle: 0
+        OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+        OutlineWidth: 0
+        FontSizeMin: 0
+        FontSizeMax: 0
+        OverrideAlignment: 0
+        Alignment: 514
+        OverrideLineSpacing: 0
+        LineSpacing: 0
+        OverrideCharacterSpacing: 0
+        CharacterSpacing: 0
+        OverrideWordWrap: 0
+        WordWrap: 0
   - OfferId: bundle_pet_lover
     Skin:
       Background: {fileID: 21300000, guid: 2d841bd7be3f96a428e13365386c39cc, type: 3}
@@ -110,10 +396,163 @@ MonoBehaviour:
       GrantPanel: {fileID: 21300000, guid: bddcf7eaafed88049a91e5e320f18572, type: 3}
       DiscountBadge: {fileID: 21300000, guid: 5aff8832a43bd7b4bb69d3d7dce91661, type: 3}
       CoinGrantIcon: {fileID: 21300000, guid: 07f0f277b24a4bd4e9229960db23539d, type: 3}
-      TitleColor: {r: 1, g: 1, b: 1, a: 1}
-      BodyColor: {r: 0.15294118, g: 0.1764706, b: 0.38039216, a: 1}
-      PriceColor: {r: 1, g: 1, b: 1, a: 1}
-      ButtonTextColor: {r: 1, g: 1, b: 1, a: 1}
+      TitleColor: {r: 0, g: 0, b: 0, a: 0}
+      BodyColor: {r: 0, g: 0, b: 0, a: 0}
+      PriceColor: {r: 0, g: 0, b: 0, a: 0}
+      ButtonTextColor: {r: 0, g: 0, b: 0, a: 0}
+      TitleText:
+        Font: {fileID: 0}
+        FontMaterial: {fileID: 0}
+        Color: {r: 0, g: 0, b: 0, a: 0}
+        FontSize: 0
+        OverrideFontStyle: 0
+        FontStyle: 0
+        OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+        OutlineWidth: 0
+        FontSizeMin: 0
+        FontSizeMax: 0
+        OverrideAlignment: 0
+        Alignment: 514
+        OverrideLineSpacing: 0
+        LineSpacing: 0
+        OverrideCharacterSpacing: 0
+        CharacterSpacing: 0
+        OverrideWordWrap: 0
+        WordWrap: 0
+      BodyText:
+        Font: {fileID: 0}
+        FontMaterial: {fileID: 0}
+        Color: {r: 0, g: 0, b: 0, a: 0}
+        FontSize: 0
+        OverrideFontStyle: 0
+        FontStyle: 0
+        OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+        OutlineWidth: 0
+        FontSizeMin: 0
+        FontSizeMax: 0
+        OverrideAlignment: 0
+        Alignment: 514
+        OverrideLineSpacing: 0
+        LineSpacing: 0
+        OverrideCharacterSpacing: 0
+        CharacterSpacing: 0
+        OverrideWordWrap: 0
+        WordWrap: 0
+      BulletsText:
+        Font: {fileID: 0}
+        FontMaterial: {fileID: 0}
+        Color: {r: 0, g: 0, b: 0, a: 0}
+        FontSize: 0
+        OverrideFontStyle: 0
+        FontStyle: 0
+        OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+        OutlineWidth: 0
+        FontSizeMin: 0
+        FontSizeMax: 0
+        OverrideAlignment: 0
+        Alignment: 514
+        OverrideLineSpacing: 0
+        LineSpacing: 0
+        OverrideCharacterSpacing: 0
+        CharacterSpacing: 0
+        OverrideWordWrap: 0
+        WordWrap: 0
+      BadgeText:
+        Font: {fileID: 0}
+        FontMaterial: {fileID: 0}
+        Color: {r: 0, g: 0, b: 0, a: 0}
+        FontSize: 0
+        OverrideFontStyle: 0
+        FontStyle: 0
+        OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+        OutlineWidth: 0
+        FontSizeMin: 0
+        FontSizeMax: 0
+        OverrideAlignment: 0
+        Alignment: 514
+        OverrideLineSpacing: 0
+        LineSpacing: 0
+        OverrideCharacterSpacing: 0
+        CharacterSpacing: 0
+        OverrideWordWrap: 0
+        WordWrap: 0
+      PriceText:
+        Font: {fileID: 0}
+        FontMaterial: {fileID: 0}
+        Color: {r: 0, g: 0, b: 0, a: 0}
+        FontSize: 0
+        OverrideFontStyle: 0
+        FontStyle: 0
+        OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+        OutlineWidth: 0
+        FontSizeMin: 0
+        FontSizeMax: 0
+        OverrideAlignment: 0
+        Alignment: 514
+        OverrideLineSpacing: 0
+        LineSpacing: 0
+        OverrideCharacterSpacing: 0
+        CharacterSpacing: 0
+        OverrideWordWrap: 0
+        WordWrap: 0
+      GrantText:
+        Font: {fileID: 0}
+        FontMaterial: {fileID: 0}
+        Color: {r: 0, g: 0, b: 0, a: 0}
+        FontSize: 0
+        OverrideFontStyle: 0
+        FontStyle: 0
+        OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+        OutlineWidth: 0
+        FontSizeMin: 0
+        FontSizeMax: 0
+        OverrideAlignment: 0
+        Alignment: 514
+        OverrideLineSpacing: 0
+        LineSpacing: 0
+        OverrideCharacterSpacing: 0
+        CharacterSpacing: 0
+        OverrideWordWrap: 0
+        WordWrap: 0
+      NoticeText:
+        Font: {fileID: 0}
+        FontMaterial: {fileID: 0}
+        Color: {r: 0, g: 0, b: 0, a: 0}
+        FontSize: 0
+        OverrideFontStyle: 0
+        FontStyle: 0
+        OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+        OutlineWidth: 0
+        FontSizeMin: 0
+        FontSizeMax: 0
+        OverrideAlignment: 0
+        Alignment: 514
+        OverrideLineSpacing: 0
+        LineSpacing: 0
+        OverrideCharacterSpacing: 0
+        CharacterSpacing: 0
+        OverrideWordWrap: 0
+        WordWrap: 0
+      DiscountText: 
+      DiscountTextStyle:
+        Font: {fileID: 0}
+        FontMaterial: {fileID: 0}
+        Color: {r: 0, g: 0, b: 0, a: 0}
+        FontSize: 0
+        OverrideFontStyle: 0
+        FontStyle: 0
+        OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+        OutlineWidth: 0
+        FontSizeMin: 0
+        FontSizeMax: 0
+        OverrideAlignment: 0
+        Alignment: 514
+        OverrideLineSpacing: 0
+        LineSpacing: 0
+        OverrideCharacterSpacing: 0
+        CharacterSpacing: 0
+        OverrideWordWrap: 0
+        WordWrap: 0
   HeroCard:
     Background: {fileID: 21300000, guid: 88c5f9d3585f51c4aba08f6e2da6dce6, type: 3}
     Frame: {fileID: 21300000, guid: baff36f0ade83374eb48a4aa6b105a7c, type: 3}
@@ -123,10 +562,163 @@ MonoBehaviour:
     GrantPanel: {fileID: 21300000, guid: 421c4bb6c00f51542bb35229391cde35, type: 3}
     DiscountBadge: {fileID: 0}
     CoinGrantIcon: {fileID: 21300000, guid: 07f0f277b24a4bd4e9229960db23539d, type: 3}
-    TitleColor: {r: 1, g: 1, b: 1, a: 1}
-    BodyColor: {r: 0.15294118, g: 0.1764706, b: 0.38039216, a: 1}
-    PriceColor: {r: 1, g: 1, b: 1, a: 1}
-    ButtonTextColor: {r: 1, g: 1, b: 1, a: 1}
+    TitleColor: {r: 0, g: 0, b: 0, a: 0}
+    BodyColor: {r: 0, g: 0, b: 0, a: 0}
+    PriceColor: {r: 0, g: 0, b: 0, a: 0}
+    ButtonTextColor: {r: 0, g: 0, b: 0, a: 0}
+    TitleText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    BodyText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    BulletsText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    BadgeText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    PriceText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    GrantText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    NoticeText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    DiscountText: 
+    DiscountTextStyle:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
   BundleCard:
     Background: {fileID: 21300000, guid: a93bdce929b4ca749b4f8f19cb9ecf3e, type: 3}
     Frame: {fileID: 21300000, guid: 1af866f88eee30d4ea966de197aa31ae, type: 3}
@@ -136,10 +728,163 @@ MonoBehaviour:
     GrantPanel: {fileID: 21300000, guid: bddcf7eaafed88049a91e5e320f18572, type: 3}
     DiscountBadge: {fileID: 21300000, guid: 5aff8832a43bd7b4bb69d3d7dce91661, type: 3}
     CoinGrantIcon: {fileID: 21300000, guid: 07f0f277b24a4bd4e9229960db23539d, type: 3}
-    TitleColor: {r: 1, g: 1, b: 1, a: 1}
-    BodyColor: {r: 0.15294118, g: 0.1764706, b: 0.38039216, a: 1}
-    PriceColor: {r: 1, g: 1, b: 1, a: 1}
-    ButtonTextColor: {r: 1, g: 1, b: 1, a: 1}
+    TitleColor: {r: 0, g: 0, b: 0, a: 0}
+    BodyColor: {r: 0, g: 0, b: 0, a: 0}
+    PriceColor: {r: 0, g: 0, b: 0, a: 0}
+    ButtonTextColor: {r: 0, g: 0, b: 0, a: 0}
+    TitleText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    BodyText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    BulletsText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    BadgeText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    PriceText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    GrantText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    NoticeText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    DiscountText: 
+    DiscountTextStyle:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
   RewardedCard:
     Background: {fileID: 21300000, guid: b0e6169e663d31c4aaf9aa728c677a22, type: 3}
     Frame: {fileID: 0}
@@ -149,10 +894,163 @@ MonoBehaviour:
     GrantPanel: {fileID: 0}
     DiscountBadge: {fileID: 0}
     CoinGrantIcon: {fileID: 21300000, guid: 07f0f277b24a4bd4e9229960db23539d, type: 3}
-    TitleColor: {r: 1, g: 1, b: 1, a: 1}
-    BodyColor: {r: 0.15294118, g: 0.1764706, b: 0.38039216, a: 1}
-    PriceColor: {r: 1, g: 1, b: 1, a: 1}
-    ButtonTextColor: {r: 1, g: 1, b: 1, a: 1}
+    TitleColor: {r: 0, g: 0, b: 0, a: 0}
+    BodyColor: {r: 0, g: 0, b: 0, a: 0}
+    PriceColor: {r: 0, g: 0, b: 0, a: 0}
+    ButtonTextColor: {r: 0, g: 0, b: 0, a: 0}
+    TitleText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    BodyText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    BulletsText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    BadgeText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    PriceText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    GrantText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    NoticeText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    DiscountText: 
+    DiscountTextStyle:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
   GridTile:
     Background: {fileID: 21300000, guid: 81ed1d848f4bd4949abfde6fa5903270, type: 3}
     Frame: {fileID: 0}
@@ -162,10 +1060,163 @@ MonoBehaviour:
     GrantPanel: {fileID: 0}
     DiscountBadge: {fileID: 0}
     CoinGrantIcon: {fileID: 0}
-    TitleColor: {r: 1, g: 1, b: 1, a: 1}
-    BodyColor: {r: 0.15294118, g: 0.1764706, b: 0.38039216, a: 1}
-    PriceColor: {r: 1, g: 1, b: 1, a: 1}
-    ButtonTextColor: {r: 1, g: 1, b: 1, a: 1}
+    TitleColor: {r: 0, g: 0, b: 0, a: 0}
+    BodyColor: {r: 0, g: 0, b: 0, a: 0}
+    PriceColor: {r: 0, g: 0, b: 0, a: 0}
+    ButtonTextColor: {r: 0, g: 0, b: 0, a: 0}
+    TitleText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    BodyText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    BulletsText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    BadgeText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    PriceText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    GrantText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    NoticeText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    DiscountText: 
+    DiscountTextStyle:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
   ItemRow:
     Background: {fileID: 21300000, guid: 2d6d1f134e8c98a409f82fe1b2d43bf6, type: 3}
     Frame: {fileID: 21300000, guid: 3805f94b2ae6e8f4999711989e73c4a6, type: 3}
@@ -175,10 +1226,163 @@ MonoBehaviour:
     GrantPanel: {fileID: 21300000, guid: e29cd84f3105790479da5495f7cfdcc4, type: 3}
     DiscountBadge: {fileID: 0}
     CoinGrantIcon: {fileID: 0}
-    TitleColor: {r: 0.15294118, g: 0.1764706, b: 0.38039216, a: 1}
-    BodyColor: {r: 0.15294118, g: 0.1764706, b: 0.38039216, a: 1}
-    PriceColor: {r: 1, g: 1, b: 1, a: 1}
-    ButtonTextColor: {r: 1, g: 1, b: 1, a: 1}
+    TitleColor: {r: 0, g: 0, b: 0, a: 0}
+    BodyColor: {r: 0, g: 0, b: 0, a: 0}
+    PriceColor: {r: 0, g: 0, b: 0, a: 0}
+    ButtonTextColor: {r: 0, g: 0, b: 0, a: 0}
+    TitleText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    BodyText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    BulletsText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    BadgeText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    PriceText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    GrantText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    NoticeText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    DiscountText: 
+    DiscountTextStyle:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
   Screen:
     Background: {fileID: 21300000, guid: a5c4b9ac7de7f294c82187220a26f86b, type: 3}
     HeaderBackground: {fileID: 21300000, guid: 623f9ac954a870e4fa49716877cea6b5, type: 3}
@@ -188,6 +1392,102 @@ MonoBehaviour:
     PopupPanel: {fileID: 21300000, guid: c302c82796091e24e8abff620eb630fa, type: 3}
     BackgroundColor: {r: 0.15294118, g: 0.1764706, b: 0.38039216, a: 1}
     TextColor: {r: 1, g: 1, b: 1, a: 1}
+    ToastBackgroundColor: {r: 0, g: 0, b: 0, a: 0}
+    TitleText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    WalletText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    ButtonText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    MessageText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
+    ToastText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+      FontSizeMin: 0
+      FontSizeMax: 0
+      OverrideAlignment: 0
+      Alignment: 514
+      OverrideLineSpacing: 0
+      LineSpacing: 0
+      OverrideCharacterSpacing: 0
+      CharacterSpacing: 0
+      OverrideWordWrap: 0
+      WordWrap: 0
   Labels:
     WatchAd: WATCH AD
     Restore: RESTORE PURCHASES
@@ -203,7 +1503,29 @@ MonoBehaviour:
     PurchaseFailed: Purchase failed. Please try again.
     RestoreDone: Purchases restored
     RestoreNothing: Nothing to restore
+    RestoreFailed: Restore failed. Please try again.
     Owned: OWNED
     DevPlaceholderPrice: "\u20AB 19.000"
     DevPlaceholderNotice: NOT ON STORE YET
+    Title: 
+    Loading: 
+    GrantCoinFormat: '{0}'
+    GrantItemFormat: x{0}
+    WalletFormat: '{0}'
   PrefabOverrides: []
+  Layout:
+    ShelfSpacing: 0
+    CollapsedShelfSpacing: 0
+    CardSpacing: 0
+    ShelfHeaderSize: {x: 0, y: 0}
+    ShelfHeaderTextPadding: {x: 0, y: 0, z: 0, w: 0}
+    GridColumns: 0
+    GridCellSize: {x: 0, y: 0}
+    GridSpacing: {x: 0, y: 0}
+    WalletPillSize: {x: 0, y: 0}
+    WalletIconSize: 0
+    ToastSize: {x: 0, y: 0}
+    ToastOffsetY: 0
+    ToastSeconds: 0
+  CardPrefabs: []
+  ScreenPrefab: {fileID: 0}

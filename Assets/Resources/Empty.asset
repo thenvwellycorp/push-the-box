@@ -1,0 +1,566 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 087bfa7742dabba449d1bd05d501032f, type: 3}
+  m_Name: Empty
+  m_EditorClassIdentifier: Growth.Paywall.Unity::Growth.ShopTheme
+  TitleFont: {fileID: 0}
+  BodyFont: {fileID: 0}
+  PriceFont: {fileID: 0}
+  GrantFont: {fileID: 0}
+  Primary:
+    Background: {fileID: 0}
+    Tint: {r: 1, g: 1, b: 1, a: 1}
+    TextColor: {r: 0, g: 0, b: 0, a: 0}
+    OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+    OutlineWidth: 0
+    Text:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+  Secondary:
+    Background: {fileID: 0}
+    Tint: {r: 1, g: 1, b: 1, a: 1}
+    TextColor: {r: 0, g: 0, b: 0, a: 0}
+    OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+    OutlineWidth: 0
+    Text:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+  Highlight:
+    Background: {fileID: 0}
+    Tint: {r: 1, g: 1, b: 1, a: 1}
+    TextColor: {r: 0, g: 0, b: 0, a: 0}
+    OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+    OutlineWidth: 0
+    Text:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+  Value:
+    Background: {fileID: 0}
+    Tint: {r: 1, g: 1, b: 1, a: 1}
+    TextColor: {r: 0, g: 0, b: 0, a: 0}
+    OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+    OutlineWidth: 0
+    Text:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+  Popular:
+    Background: {fileID: 0}
+    Tint: {r: 1, g: 1, b: 1, a: 1}
+    TextColor: {r: 0, g: 0, b: 0, a: 0}
+    OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+    OutlineWidth: 0
+    Text:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+  Gift:
+    Background: {fileID: 0}
+    Tint: {r: 1, g: 1, b: 1, a: 1}
+    TextColor: {r: 0, g: 0, b: 0, a: 0}
+    OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+    OutlineWidth: 0
+    Text:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+  ResourceIcons: []
+  OfferIcons: []
+  OfferSkins: []
+  HeroCard:
+    Background: {fileID: 0}
+    Frame: {fileID: 0}
+    BuyButton: {fileID: 0}
+    DefaultIcon: {fileID: 0}
+    GrantBackground: {fileID: 0}
+    GrantPanel: {fileID: 0}
+    DiscountBadge: {fileID: 0}
+    CoinGrantIcon: {fileID: 0}
+    TitleColor: {r: 0, g: 0, b: 0, a: 0}
+    BodyColor: {r: 0, g: 0, b: 0, a: 0}
+    PriceColor: {r: 0, g: 0, b: 0, a: 0}
+    ButtonTextColor: {r: 0, g: 0, b: 0, a: 0}
+    TitleText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    BodyText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    BulletsText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    BadgeText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    PriceText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    GrantText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    NoticeText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+  BundleCard:
+    Background: {fileID: 0}
+    Frame: {fileID: 0}
+    BuyButton: {fileID: 0}
+    DefaultIcon: {fileID: 0}
+    GrantBackground: {fileID: 0}
+    GrantPanel: {fileID: 0}
+    DiscountBadge: {fileID: 0}
+    CoinGrantIcon: {fileID: 0}
+    TitleColor: {r: 0, g: 0, b: 0, a: 0}
+    BodyColor: {r: 0, g: 0, b: 0, a: 0}
+    PriceColor: {r: 0, g: 0, b: 0, a: 0}
+    ButtonTextColor: {r: 0, g: 0, b: 0, a: 0}
+    TitleText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    BodyText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    BulletsText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    BadgeText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    PriceText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    GrantText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    NoticeText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+  RewardedCard:
+    Background: {fileID: 0}
+    Frame: {fileID: 0}
+    BuyButton: {fileID: 0}
+    DefaultIcon: {fileID: 0}
+    GrantBackground: {fileID: 0}
+    GrantPanel: {fileID: 0}
+    DiscountBadge: {fileID: 0}
+    CoinGrantIcon: {fileID: 0}
+    TitleColor: {r: 0, g: 0, b: 0, a: 0}
+    BodyColor: {r: 0, g: 0, b: 0, a: 0}
+    PriceColor: {r: 0, g: 0, b: 0, a: 0}
+    ButtonTextColor: {r: 0, g: 0, b: 0, a: 0}
+    TitleText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    BodyText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    BulletsText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    BadgeText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    PriceText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    GrantText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    NoticeText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+  GridTile:
+    Background: {fileID: 0}
+    Frame: {fileID: 0}
+    BuyButton: {fileID: 0}
+    DefaultIcon: {fileID: 0}
+    GrantBackground: {fileID: 0}
+    GrantPanel: {fileID: 0}
+    DiscountBadge: {fileID: 0}
+    CoinGrantIcon: {fileID: 0}
+    TitleColor: {r: 0, g: 0, b: 0, a: 0}
+    BodyColor: {r: 0, g: 0, b: 0, a: 0}
+    PriceColor: {r: 0, g: 0, b: 0, a: 0}
+    ButtonTextColor: {r: 0, g: 0, b: 0, a: 0}
+    TitleText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    BodyText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    BulletsText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    BadgeText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    PriceText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    GrantText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    NoticeText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+  ItemRow:
+    Background: {fileID: 0}
+    Frame: {fileID: 0}
+    BuyButton: {fileID: 0}
+    DefaultIcon: {fileID: 0}
+    GrantBackground: {fileID: 0}
+    GrantPanel: {fileID: 0}
+    DiscountBadge: {fileID: 0}
+    CoinGrantIcon: {fileID: 0}
+    TitleColor: {r: 0, g: 0, b: 0, a: 0}
+    BodyColor: {r: 0, g: 0, b: 0, a: 0}
+    PriceColor: {r: 0, g: 0, b: 0, a: 0}
+    ButtonTextColor: {r: 0, g: 0, b: 0, a: 0}
+    TitleText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    BodyText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    BulletsText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    BadgeText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    PriceText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    GrantText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    NoticeText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+  Screen:
+    Background: {fileID: 0}
+    HeaderBackground: {fileID: 0}
+    WalletBar: {fileID: 0}
+    CloseButton: {fileID: 0}
+    SecondaryButton: {fileID: 0}
+    PopupPanel: {fileID: 0}
+    BackgroundColor: {r: 0, g: 0, b: 0, a: 0}
+    TextColor: {r: 0, g: 0, b: 0, a: 0}
+    ToastBackgroundColor: {r: 0, g: 0, b: 0, a: 0}
+    TitleText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    WalletText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    ButtonText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    MessageText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+    ToastText:
+      Font: {fileID: 0}
+      FontMaterial: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      FontSize: 0
+      OverrideFontStyle: 0
+      FontStyle: 0
+      OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+      OutlineWidth: 0
+  Labels:
+    WatchAd: WATCH AD
+    Restore: RESTORE PURCHASES
+    MoreOffers: MORE OFFERS
+    ShowLess: SHOW LESS
+    StoreUnavailable: Can't load the store. Please try again.
+    Retry: RETRY
+    PendingPayment: Waiting
+    DailyCapReached: Come back tomorrow
+    AdLoading: "Loading ad\u2026"
+    CooldownFormat: mm\:ss
+    PurchaseSuccess: Purchase complete!
+    PurchaseFailed: Purchase failed. Please try again.
+    RestoreDone: Purchases restored
+    RestoreNothing: Nothing to restore
+    RestoreFailed: Restore failed. Please try again.
+    Owned: OWNED
+    DevPlaceholderPrice: $1
+    DevPlaceholderNotice: NOT ON STORE YET
+  PrefabOverrides: []

@@ -606,11 +606,12 @@ namespace PushTheBox.UI
 
         #endregion
 
+        // Player just watched a rewarded ad (2X coins): skip the interstitial on the next transition.
         private void OnReplayClicked()
         {
             if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundType.ButtonClick);
             HideModal();
-            if (GrowthManager.Instance != null)
+            if (GrowthManager.Instance != null && !isDoubleClaimed)
             {
                 GrowthManager.Instance.ShowInterstitial(Placement.AfterLevelComplete, () =>
                 {
@@ -627,7 +628,7 @@ namespace PushTheBox.UI
         {
             if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundType.ButtonClick);
             HideModal();
-            if (GrowthManager.Instance != null)
+            if (GrowthManager.Instance != null && !isDoubleClaimed)
             {
                 GrowthManager.Instance.ShowInterstitial(Placement.AfterLevelComplete, () =>
                 {
@@ -644,7 +645,7 @@ namespace PushTheBox.UI
         {
             if (AudioManager.Instance != null) AudioManager.Instance.PlaySound(SoundType.ButtonClick);
             HideModal();
-            if (GrowthManager.Instance != null)
+            if (GrowthManager.Instance != null && !isDoubleClaimed)
             {
                 GrowthManager.Instance.ShowInterstitial(Placement.MapReturn, () =>
                 {

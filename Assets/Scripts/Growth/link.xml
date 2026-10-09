@@ -1,0 +1,13 @@
+<!-- Keeps the Growth SDK internals used by AdShowWatchdogPauseFix via reflection from being stripped by IL2CPP. -->
+<linker>
+  <assembly fullname="Growth.Ads.AdMob">
+    <type fullname="Ziba.Growth.Ads.AdMob.AdMobAdPresenter">
+      <field name="_watchdog" />
+    </type>
+  </assembly>
+  <assembly fullname="Growth.Ads">
+    <type fullname="Ziba.Growth.Ads.FullscreenShowWatchdog">
+      <method name="MarkOpened" />
+    </type>
+  </assembly>
+</linker>

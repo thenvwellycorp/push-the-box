@@ -13,8 +13,28 @@ namespace PushTheBox.GrowthIntegration
     /// </summary>
     public class PushTheBoxInventoryAdapter : IInventoryAdapter
     {
+        // "ticket" is a test-only reward used to exercise non-coin grants in the Shop; no gameplay consumes it yet.
+        private const string TicketKey = "PushTheBox_Tickets";
+        // "undo" is granted by Shop bundles; the in-game Undo button does not consume it yet.
+        private const string UndoKey = "PushTheBox_Undos";
+
+        // PlayerPrefs key for resources stored outside SaveManager; null for coin / unknown ids.
+        private static string PrefsKey(string resourceId)
+        {
+            switch (resourceId)
+            {
+                case "ticket": return TicketKey;
+                case "undo": return UndoKey;
+                default: return null;
+            }
+        }
+
         public long GetBalance(string resourceId)
         {
+            string key = PrefsKey(resourceId);
+            if (key != null)
+                return PlayerPrefs.GetInt(key, 0);
+
             if (resourceId == "coin")
             {
                 if (SaveManager.Instance != null)
@@ -26,6 +46,13 @@ namespace PushTheBox.GrowthIntegration
 
         public void Add(string resourceId, long amount)
         {
+            string key = PrefsKey(resourceId);
+            if (key != null)
+            {
+                PlayerPrefs.SetInt(key, PlayerPrefs.GetInt(key, 0) + (int)amount);
+                PlayerPrefs.Save();
+                return;
+            }
             if (resourceId == "coin")
             {
                 if (SaveManager.Instance != null)
@@ -43,6 +70,15 @@ namespace PushTheBox.GrowthIntegration
 
         public bool TryRemove(string resourceId, long amount)
         {
+            string key = PrefsKey(resourceId);
+            if (key != null)
+            {
+                int balance = PlayerPrefs.GetInt(key, 0);
+                if (balance < amount) return false;
+                PlayerPrefs.SetInt(key, balance - (int)amount);
+                PlayerPrefs.Save();
+                return true;
+            }
             if (resourceId == "coin")
             {
                 if (SaveManager.Instance != null)
@@ -106,6 +142,7 @@ namespace PushTheBox.GrowthIntegration
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
                 InitSDK();
+                gameObject.AddComponent<AdShowWatchdogPauseFix>();
             }
             else if (Instance != this)
             {
@@ -144,7 +181,7 @@ namespace PushTheBox.GrowthIntegration
                     GameId = "push_the_box",
                     ConceptId = "push_the_box_v1",
                     ConceptShort = "ptbox",
-                    Resources = new[] { "coin" },
+                    Resources = new[] { "coin", "ticket", "undo" },
                     Entitlements = new[] { "no_banner", "no_interstitial" },
                     CardTemplates = new[] { "hero_card", "bundle_card", "rewarded_card", "grid_tile", "item_row" },
                     EmbeddedShopConfigJson = shopJson,

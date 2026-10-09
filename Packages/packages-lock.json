@@ -71,15 +71,14 @@
       }
     },
     "com.ziba.growth": {
-      "version": "ssh://git@git.wellytech.vn/welly-global/mobile-games/ziba-game-platform/ziba-paywall-sdk.git?path=/Packages/com.ziba.growth#v0.2.1",
+      "version": "file:../../../ziba-paywall-sdk/Packages/com.ziba.growth",
       "depth": 0,
-      "source": "git",
+      "source": "local",
       "dependencies": {
         "com.unity.purchasing": "5.4.3",
         "com.unity.ugui": "2.0.0",
         "com.unity.nuget.newtonsoft-json": "3.2.1"
-      },
-      "hash": "3123ee97f127a31e972845287d81494e5e0cbe35"
+      }
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",

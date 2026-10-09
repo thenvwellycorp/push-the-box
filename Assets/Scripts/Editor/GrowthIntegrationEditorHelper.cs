@@ -22,7 +22,7 @@ namespace PushTheBox.EditorTools
             var shopConfig = Resources.Load<TextAsset>("paywall_shop_config");
             var adsConfig = Resources.Load<TextAsset>("ads_config");
             var adUnits = Resources.Load<Growth.GrowthAdUnits>("GrowthAdUnits");
-            var theme = Resources.Load<Growth.ShopTheme>("ArrowRushShopTheme");
+            var theme = Resources.Load<Growth.ShopTheme>("PushTheBoxShopTheme");
 
             Debug.Log($"[Growth SDK Validation]\n" +
                       $"- paywall_shop_config.json: {(shopConfig != null ? "FOUND (" + shopConfig.text.Length + " bytes)" : "MISSING")}\n" +
